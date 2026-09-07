@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Kumwe\Integration;
 
 use Kumwe\CanonicalJson\CanonicalEncoder;
-
 use Kumwe\Integration\DomainEvent;
 use Kumwe\Integration\IntegrationEvent;
 

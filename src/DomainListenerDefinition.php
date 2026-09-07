@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Kumwe\Integration;
 
-
 use InvalidArgumentException;
 
 /**
@@ -31,7 +30,7 @@ final readonly class DomainListenerDefinition implements IntegrationContract
      *
      * @param   string            $listenerId          Globally namespaced listener identity.
      * @param   string            $eventType           Event contract listened to.
-     * @param   list<int>         $schemaVersions      Explicitly accepted schema revisions.
+     * @param   array<array-key, mixed>         $schemaVersions      Explicitly accepted schema revisions.
      * @param   string            $handlerVersion      Immutable executable revision.
      * @param   int               $priority            Deterministic order, from -1000 through 1000.
      * @param   EventSensitivity  $sensitivityCeiling  Most sensitive event this listener accepts.
@@ -54,17 +53,19 @@ final readonly class DomainListenerDefinition implements IntegrationContract
         if (!array_is_list($schemaVersions) || $schemaVersions === [] || count($schemaVersions) > 32) {
             throw new InvalidArgumentException('A domain listener needs a bounded schema-version list.');
         }
+        $validatedVersions = [];
         foreach ($schemaVersions as $version) {
             if (!is_int($version) || $version < 1 || $version > 65_535) {
                 throw new InvalidArgumentException('A domain listener schema version is invalid.');
             }
+            $validatedVersions[] = $version;
         }
         $canonicalVersions = array_values(array_unique($schemaVersions));
         sort($canonicalVersions, SORT_NUMERIC);
         if ($schemaVersions !== $canonicalVersions || $priority < -1000 || $priority > 1000) {
             throw new InvalidArgumentException('A domain listener needs versions and a bounded priority.');
         }
-        $this->schemaVersions = $schemaVersions;
+        $this->schemaVersions = $validatedVersions;
     }
 
     /**

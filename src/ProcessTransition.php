@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Kumwe\Integration;
 
 use Kumwe\CanonicalJson\CanonicalEncoder;
-
 use Kumwe\Integration\IntegrationContractValidator;
 use InvalidArgumentException;
 
@@ -45,9 +44,13 @@ final readonly class ProcessTransition
      */
     public function __construct(
         private readonly CanonicalEncoder $canonicalJson,
-        array $state, private ProcessStatus $status, iterable $work = [])
-    {
-        IntegrationContractValidator::object($canonicalJson, $state,
+        array $state,
+        private ProcessStatus $status,
+        iterable $work = []
+    ) {
+        IntegrationContractValidator::object(
+            $canonicalJson,
+            $state,
             'Process transition state',
             RecordedEventEnvelope::MAX_PAYLOAD_BYTES,
         );

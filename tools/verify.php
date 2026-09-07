@@ -9,11 +9,11 @@ if(in_array('--lint',$argv,true)) {foreach($files as $file){passthru(escapeshell
 if(in_array('--architecture',$argv,true)) {
  $allowed=[$prefix,'Kumwe\\CanonicalJson\\','Kumwe\\Contribution\\','Kumwe\\Context\\','Psr\\Clock\\'];
  if($composer['name']==='kumwe/integration')$allowed=[...$allowed,'Kumwe\\Automation\\','Ramsey\\Uuid\\'];
- $forbiddenCalls=['file_get_contents','file_put_contents','fopen','curl_exec','fsockopen','getenv','putenv','exec','shell_exec','system','passthru','pcntl_alarm','pcntl_signal','class_alias'];
+ $forbiddenCalls=['file_get_contents','file_put_contents','fopen','curl_exec','fsockopen','getenv','putenv','exec','shell_exec','system','passthru','call_user_func','call_user_func_array','pcntl_alarm','pcntl_signal','class_alias'];
  foreach($files as $file)foreach(token_get_all(file_get_contents($file)) as $token){
   if(!is_array($token))continue;
   if(in_array($token[0],[T_INCLUDE,T_INCLUDE_ONCE,T_REQUIRE,T_REQUIRE_ONCE,T_EVAL],true))throw new RuntimeException('Runtime loading is forbidden: '.$file);
-  if($token[0]===T_STRING && in_array(strtolower($token[1]),$forbiddenCalls,true))throw new RuntimeException('Host operation in '.$file.': '.$token[1]);
+  if(in_array($token[0],[T_STRING,T_NAME_FULLY_QUALIFIED],true) && in_array(strtolower(ltrim($token[1],'\\')),$forbiddenCalls,true))throw new RuntimeException('Host operation in '.$file.': '.$token[1]);
   if(in_array($token[0],[T_NAME_QUALIFIED,T_NAME_FULLY_QUALIFIED],true)){
    $name=ltrim($token[1],'\\');if(!str_contains($name,'\\'))continue;
    if(!array_any($allowed,static fn(string $p):bool=>str_starts_with($name,$p) || $name === rtrim($p,'\\')))throw new RuntimeException('Undeclared dependency '.$name.' in '.$file);

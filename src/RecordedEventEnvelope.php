@@ -120,7 +120,7 @@ abstract readonly class RecordedEventEnvelope implements EventEnvelope
         self::assertIdentity($aggregateId, 'aggregate');
         self::assertIdentity($correlationId, 'correlation');
         self::assertIdentity($causationId, 'causation');
-        if ($payload !== [] && array_is_list($payload)) {
+        if (self::isNonemptyList($payload)) {
             throw new InvalidArgumentException('An event payload must be a JSON object.');
         }
         $nodes = 0;
@@ -522,5 +522,10 @@ abstract readonly class RecordedEventEnvelope implements EventEnvelope
                 self::measurePayload($item, $depth + 1, $nodes);
             }
         }
+    }
+    /** @param array<array-key, mixed> $value Candidate collection at the event boundary. */
+    private static function isNonemptyList(array $value): bool
+    {
+        return $value !== [] && array_is_list($value);
     }
 }

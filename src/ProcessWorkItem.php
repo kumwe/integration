@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Kumwe\Integration;
 
 use Kumwe\CanonicalJson\CanonicalEncoder;
-
 use Kumwe\Integration\IntegrationContractValidator;
 use DateTimeImmutable;
 use InvalidArgumentException;
@@ -53,7 +52,9 @@ final readonly class ProcessWorkItem
             throw new InvalidArgumentException('A process work item ID must be a UUID.');
         }
         IntegrationContractValidator::identifier($name, 'Process work name');
-        IntegrationContractValidator::object($canonicalJson, $payload,
+        IntegrationContractValidator::object(
+            $canonicalJson,
+            $payload,
             'Process work payload',
             RecordedEventEnvelope::MAX_PAYLOAD_BYTES,
         );
