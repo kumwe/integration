@@ -848,7 +848,7 @@ next_task:
     - "Immutable package and all dependency releases are independently verified"
     - "Reconcile current App drift against the recorded source inventories"
   consumer_repository: "https://github.com/kumwe/app"
-  dependency_or_native_change: "Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.1.0 requires Contribution 0.1.0. Publish a compatible Automation successor first, then promote Integration Automation/Contribution pins together. The current coherent release graph remains pinned."
+  dependency_or_native_change: "Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.1.0 requires Contribution 0.1.0 and Access Context 0.1.0. Publish a compatible Automation successor first, then promote Integration Automation/Contribution/Access Context pins together. The current coherent release graph remains pinned."
   namespace_or_api_replacements:
     - "Kumwe\\App\\BusinessIntegration\\Domain\\EventSchemaDefinition -> Kumwe\\Integration\\EventSchemaDefinition"
     - "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessInstance -> Kumwe\\Integration\\ProcessInstance"
@@ -986,7 +986,7 @@ decisions:
   - "Event contracts, schema validation and portable integration declarations are implemented and tested here. Transport, outbox persistence, commit ordering, network deadlines and final authorization remain host responsibilities."
   - "Library behavior tests are package-owned. App changes, releases and external attestations are separate tasks."
 blockers:
-  - "Independent successor release verification and the final package gate remain necessary before App adoption. Integration cannot use Contribution 0.1.1 until the compatible Automation successor is actually published."
+  - "Independent successor release verification and the final package gate remain necessary before App adoption. Integration cannot use Contribution 0.1.1 or Access Context 0.1.1 until the compatible Automation successor is actually published."
 ---
 
 # integration implementation handoff
@@ -1001,7 +1001,7 @@ Event contracts, schema validation and portable integration declarations are imp
 
 ## Capability reuse/semantic input review
 
-The implementation consumes the exact canonical dependency contracts recorded in composer.json. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.1.0 requires Contribution 0.1.0. Publish a compatible Automation successor first, then promote Integration Automation/Contribution pins together. The current coherent release graph remains pinned.
+The implementation consumes the exact canonical dependency contracts recorded in composer.json. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.1.0 requires Contribution 0.1.0 and Access Context 0.1.0. Publish a compatible Automation successor first, then promote Integration Automation/Contribution/Access Context pins together. The current coherent release graph remains pinned.
 
 ## Consumer inventory
 
@@ -1013,7 +1013,7 @@ Package tests own portable values, validation, service behavior, explicit constr
 
 ## Next-task execution notes
 
-Independent successor release verification and the final package gate remain necessary before App adoption. Integration cannot use Contribution 0.1.1 until the compatible Automation successor is actually published. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.1.0 requires Contribution 0.1.0. Publish a compatible Automation successor first, then promote Integration Automation/Contribution pins together. The current coherent release graph remains pinned. Run final source and clean archive gates before admitting the package; then update the App dependency lock, replace namespaces, retain host adapters and remove only the inventoried portable legacy implementations.
+Independent successor release verification and the final package gate remain necessary before App adoption. Integration cannot use Contribution 0.1.1 or Access Context 0.1.1 until the compatible Automation successor is actually published. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.1.0 requires Contribution 0.1.0 and Access Context 0.1.0. Publish a compatible Automation successor first, then promote Integration Automation/Contribution/Access Context pins together. The current coherent release graph remains pinned. Run final source and clean archive gates before admitting the package; then update the App dependency lock, replace namespaces, retain host adapters and remove only the inventoried portable legacy implementations.
 
 ## Drift check
 
