@@ -6,9 +6,9 @@
   "require": {
     "php": "^8.5",
     "kumwe/canonical-json": "0.1.1",
-    "kumwe/contribution": "^0.1",
-    "kumwe/access-context": "^0.1",
-    "kumwe/automation": "dev-main || dev-fix/stable-dependencies-and-release",
+    "kumwe/contribution": "0.1.0",
+    "kumwe/access-context": "0.1.0",
+    "kumwe/automation": "0.1.0",
     "ramsey/uuid": "^4.7",
     "ext-mbstring": "*"
   },
@@ -54,6 +54,6 @@
     "phpstan/phpstan": "^2.1",
     "squizlabs/php_codesniffer": "^4.0"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true
 }
