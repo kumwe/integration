@@ -58,6 +58,8 @@ final class PayloadSchemaValidator
      */
     public function assertPayload(array $schema, array $payload): void
     {
+        $this->assertSchema($schema);
+        $this->assertPortableValue($payload, 1);
         $this->validateValue($schema, $payload, '$');
     }
 
@@ -80,6 +82,11 @@ final class PayloadSchemaValidator
         if ($unknown !== []) {
             throw new InvalidArgumentException('A payload schema contains unsupported keywords.');
         }
+        foreach ($schema as $keyword => $declaration) {
+            if ($declaration === null) {
+                throw new InvalidArgumentException(sprintf('Schema %s must not be null.', $keyword));
+            }
+        }
         $type = $schema['type'] ?? null;
         if (
             $type !== null && (!is_string($type) || !in_array($type, [
@@ -89,7 +96,10 @@ final class PayloadSchemaValidator
             throw new InvalidArgumentException('A payload schema type is invalid.');
         }
         if (isset($schema['properties'])) {
-            if (!is_array($schema['properties']) || array_is_list($schema['properties'])) {
+            if (
+                !is_array($schema['properties'])
+                || ($schema['properties'] !== [] && array_is_list($schema['properties']))
+            ) {
                 throw new InvalidArgumentException('Schema properties must be an object.');
             }
             foreach ($schema['properties'] as $name => $child) {
@@ -117,11 +127,17 @@ final class PayloadSchemaValidator
                     throw new InvalidArgumentException('A required property name is invalid.');
                 }
             }
+            if (count(array_unique($schema['required'])) !== count($schema['required'])) {
+                throw new InvalidArgumentException('Schema required must contain unique property names.');
+            }
         }
         if (isset($schema['additionalProperties']) && !is_bool($schema['additionalProperties'])) {
             throw new InvalidArgumentException('Schema additionalProperties must be boolean.');
         }
-        if (isset($schema['enum']) && (!is_array($schema['enum']) || !array_is_list($schema['enum']))) {
+        if (
+            isset($schema['enum'])
+            && (!is_array($schema['enum']) || !array_is_list($schema['enum']) || $schema['enum'] === [])
+        ) {
             throw new InvalidArgumentException('Schema enum must be a list.');
         }
         foreach (['minLength', 'maxLength', 'minItems', 'maxItems'] as $bound) {
@@ -130,8 +146,18 @@ final class PayloadSchemaValidator
             }
         }
         foreach (['minimum', 'maximum'] as $bound) {
-            if (isset($schema[$bound]) && !is_int($schema[$bound]) && !is_float($schema[$bound])) {
+            if (
+                isset($schema[$bound])
+                && ((!is_int($schema[$bound]) && !is_float($schema[$bound]))
+                || (is_float($schema[$bound]) && !is_finite($schema[$bound])))
+            ) {
                 throw new InvalidArgumentException(sprintf('Schema %s must be numeric.', $bound));
+            }
+        }
+        $boundPairs = [['minLength', 'maxLength'], ['minItems', 'maxItems'], ['minimum', 'maximum']];
+        foreach ($boundPairs as [$minimum, $maximum]) {
+            if (isset($schema[$minimum], $schema[$maximum]) && $schema[$minimum] > $schema[$maximum]) {
+                throw new InvalidArgumentException('Schema minimum must not exceed its maximum.');
             }
         }
         if (isset($schema['pattern'])) {
@@ -199,7 +225,9 @@ final class PayloadSchemaValidator
         if (!is_array($value)) {
             return;
         }
-        if (array_is_list($value)) {
+        $objectSchema = $type === 'object'
+            || ($type === null && (isset($schema['properties']) || isset($schema['required'])));
+        if (array_is_list($value) && !($value === [] && $objectSchema)) {
             if (isset($schema['minItems']) && count($value) < $schema['minItems']) {
                 throw new InvalidArgumentException(sprintf('Payload array %s has too few items.', $path));
             }
@@ -259,6 +287,40 @@ final class PayloadSchemaValidator
             }
             /** @var array<string, mixed> $child */
             $this->validateValue($child, $item, $path . '.' . $name);
+        }
+    }
+
+    /**
+     * Refuse non-JSON values and bound all payload branches, including unconstrained properties.
+     *
+     * @param mixed $value Candidate portable payload value.
+     * @param int $depth Current depth, with the root at one.
+     * @return void
+     * @throws InvalidArgumentException On invalid UTF-8, non-finite numbers, unsupported values or exceeded bounds.
+     */
+    private function assertPortableValue(mixed $value, int $depth): void
+    {
+        if ($depth > 16) {
+            throw new InvalidArgumentException('A payload exceeds the maximum nesting depth.');
+        }
+        if (is_array($value)) {
+            if (count($value) > 2048) {
+                throw new InvalidArgumentException('A payload collection exceeds 2048 members.');
+            }
+            foreach ($value as $key => $member) {
+                if (is_string($key) && !mb_check_encoding($key, 'UTF-8')) {
+                    throw new InvalidArgumentException('Payload property names must be valid UTF-8.');
+                }
+                $this->assertPortableValue($member, $depth + 1);
+            }
+            return;
+        }
+        if (
+            (is_string($value) && !mb_check_encoding($value, 'UTF-8'))
+            || (is_float($value) && !is_finite($value))
+            || (!is_scalar($value) && $value !== null)
+        ) {
+            throw new InvalidArgumentException('A payload must contain finite portable JSON values.');
         }
     }
 

@@ -1,15 +1,28 @@
 {
+    "schema": "kumwe-package-service-map/v1",
     "package": "kumwe/integration",
-    "ports": [
-        "Kumwe\\Integration\\DomainEvent",
-        "Kumwe\\Integration\\EventEnvelope",
-        "Kumwe\\Integration\\InboxStore",
-        "Kumwe\\Integration\\IntegrationContract",
-        "Kumwe\\Integration\\IntegrationEvent",
-        "Kumwe\\Integration\\OutboxStore",
-        "Kumwe\\Integration\\ProcessManagerHandler",
-        "Kumwe\\Integration\\ProcessManagerStore"
+    "release": "0.2.0",
+    "config_provider": "Kumwe\\Integration\\ConfigProvider",
+    "provider_absence_reason": null,
+    "factories": [
+        {
+            "service": "Kumwe\\Integration\\EventContractRegistry",
+            "factory": "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
+            "lifetime": "shared"
+        }
     ],
-    "bindings": [],
-    "composition": "Host supplies explicit constructor dependencies and implements ports. This package performs no automatic registration."
+    "aliases": {},
+    "delegators": [],
+    "configuration_keys": [
+        {
+            "key": "kumwe.integration.schemas",
+            "default": [],
+            "description": "Explicit integration configuration; see docs/integration.md."
+        },
+        {
+            "key": "kumwe.integration.consumers",
+            "default": [],
+            "description": "Explicit integration configuration; see docs/integration.md."
+        }
+    ]
 }

@@ -1352,5 +1352,27 @@
       }
     ],
     "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ConfigProvider",
+    "kind": "class",
+    "portable_tests": [
+      "tests/container.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [],
+    "ownership": "package composition"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
+    "kind": "class",
+    "portable_tests": [
+      "tests/container.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [],
+    "ownership": "package composition"
   }
 ]

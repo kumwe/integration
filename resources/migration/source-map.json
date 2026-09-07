@@ -295,5 +295,21 @@
         "source_path": "src/BusinessIntegration/Application/ProcessWorkLease.php",
         "source_sha256": "c43ee61e36db7d6f51cb684f908058a8b6d6054fd3ab2d83040649781e720520",
         "target_path": "src/ProcessWorkLease.php"
+    },
+    {
+        "origin": "package",
+        "old_fqcn": null,
+        "new_fqcn": "Kumwe\\Integration\\ConfigProvider",
+        "source_repository": "https://github.com/kumwe/integration",
+        "target_path": "src/ConfigProvider.php",
+        "responsibility": "Portable package composition added during readiness completion."
+    },
+    {
+        "origin": "package",
+        "old_fqcn": null,
+        "new_fqcn": "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
+        "source_repository": "https://github.com/kumwe/integration",
+        "target_path": "src/Container/EventContractRegistryFactory.php",
+        "responsibility": "Portable package composition added during readiness completion."
     }
 ]

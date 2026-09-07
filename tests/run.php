@@ -51,6 +51,12 @@ rejects(fn()=> new ProcessTransition($encoder,['step'=>2],ProcessStatus::RUNNING
 rejects(fn()=> new InboxClaimResult(InboxDisposition::CLAIMED));
 check((new InboxClaimResult(InboxDisposition::DUPLICATE))->lease===null,'Duplicate inbox result has no lease');
 $validator=new PayloadSchemaValidator();
+rejects(fn()=> $validator->assertPayload(['type'=>'object','required'=>['id']],[]));
+rejects(fn()=> $validator->assertPayload(['type'=>'object','properties'=>['nested'=>['type'=>'object','required'=>['id']]]],['nested'=>[]]));
+$validator->assertSchema(['type'=>'object','properties'=>[]]);check(true,'Empty object schema has no property declarations');
+foreach ([['type'=>null],['required'=>null],['type'=>'invalid'],['enum'=>[]],['minimum'=>INF],['minimum'=>2,'maximum'=>1],['minItems'=>2,'maxItems'=>1],['required'=>['id','id']]] as $badSchema) rejects(fn()=> $validator->assertPayload($badSchema,[]));
+foreach ([['value'=>NAN],['value'=>INF],['value'=>new stdClass()],['value'=>"\xff"]] as $badPayload) rejects(fn()=> $validator->assertPayload([], $badPayload));
+$recursive=[];$recursive['self']=&$recursive;rejects(fn()=> $validator->assertPayload([], $recursive));unset($recursive);
 $validator->assertPayload(['type'=>'object','properties'=>['ids'=>['type'=>'array','items'=>['type'=>'integer'],'maxItems'=>2]],'additionalProperties'=>false],['ids'=>[1,2]]);check(true,'Typed bounded nested payload accepted');
 rejects(fn()=> $validator->assertPayload(['type'=>'object','properties'=>['ids'=>['type'=>'array','items'=>['type'=>'integer'],'maxItems'=>2]]],['ids'=>[1,2,3]]));
 $encoder->refuse=true;rejects(fn()=> $process->transition(['step'=>2],ProcessStatus::RUNNING,$now->modify('+1 minute')));$encoder->refuse=false;
@@ -78,4 +84,5 @@ $processLease=new \Kumwe\Integration\ProcessWorkLease($id,1,'default','organizat
 check($processLease->work===$work,'Process lease validates canonical context and retains work');
 rejects(fn()=>new \Kumwe\Integration\ProcessWorkLease($id,0,'default',null,$work,1,'worker-1',$id,'generation-1'));
 check(EventSensitivity::PUBLIC->allowedBy(EventSensitivity::INTERNAL) && !EventSensitivity::INTERNAL->allowedBy(EventSensitivity::PUBLIC),'Sensitivity disclosure order is directional');
+require __DIR__.'/container.php';
 fwrite(STDOUT,"integration: $assertions assertions passed\n");

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+- Reject empty-object required-property bypasses and malformed, non-finite or unbounded schema/payload input.
+- Add explicit event registry ConfigProvider/factory with successful and refused service composition tests.
+- Complete public API/member docs, capability manifest, standalone example and uniform package gates.
+
 ## 0.1.0
 
 - Extract versioned integration events, contracts, process values and neutral store ports.
