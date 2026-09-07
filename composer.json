@@ -5,10 +5,10 @@
   "license": "Apache-2.0",
   "require": {
     "php": "^8.5",
-    "kumwe/canonical-json": "^0.1.1",
+    "kumwe/canonical-json": "dev-agent/canonical-encoder-port-v2",
     "kumwe/contribution": "^0.1",
     "kumwe/access-context": "^0.1",
-    "kumwe/automation": "^0.1",
+    "kumwe/automation": "dev-agent/extract-automation-v2",
     "ramsey/uuid": "^4.7",
     "ext-mbstring": "*"
   },
@@ -46,11 +46,14 @@
       "/.gitignore",
       "/.phpstan-cache",
       "/phpstan.neon",
-      "/phpcs.xml"
+      "/phpcs.xml",
+      "/.github"
     ]
   },
   "require-dev": {
     "phpstan/phpstan": "^2.1",
     "squizlabs/php_codesniffer": "^4.0"
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
