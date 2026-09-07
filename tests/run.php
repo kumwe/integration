@@ -54,4 +54,28 @@ $validator=new PayloadSchemaValidator();
 $validator->assertPayload(['type'=>'object','properties'=>['ids'=>['type'=>'array','items'=>['type'=>'integer'],'maxItems'=>2]],'additionalProperties'=>false],['ids'=>[1,2]]);check(true,'Typed bounded nested payload accepted');
 rejects(fn()=> $validator->assertPayload(['type'=>'object','properties'=>['ids'=>['type'=>'array','items'=>['type'=>'integer'],'maxItems'=>2]]],['ids'=>[1,2,3]]));
 $encoder->refuse=true;rejects(fn()=> $process->transition(['step'=>2],ProcessStatus::RUNNING,$now->modify('+1 minute')));$encoder->refuse=false;
+$listener=new \Kumwe\Integration\DomainListenerDefinition('acme.listener','business.record.changed',[1],'1.0.0');
+check(\Kumwe\Integration\DomainListenerDefinition::fromArray($listener->toArray())->toArray()===$listener->toArray(),'Domain listener definition roundtrip');
+$view=\Kumwe\Integration\DomainListenerDeclaration::fromManifest($listener->toArray());check($view->accepts($domain),'Domain listener view accepts declared event');
+$consumerView=\Kumwe\Integration\EventConsumerDeclaration::fromManifest($consumer->toArray());check($consumerView->accepts($integration),'Consumer view accepts declared event');
+$webhook=new WebhookContributionDefinition('acme.webhook',['business.record.changed'],[1],'1.0.0','acme.delivery');
+check(WebhookContributionDefinition::fromArray($webhook->toArray())->toArray()===$webhook->toArray(),'Webhook definition roundtrip');
+$webhookView=\Kumwe\Integration\WebhookDeclaration::fromManifest($webhook->toArray());check($webhookView->accepts($integration),'Webhook view accepts declared event');
+foreach([[1,1],[2,1],['1'],['first'=>1]] as $versions){
+ rejects(fn()=>new EventConsumerDefinition('acme.consumer','business.record.changed',$versions,'1.0.0'));
+ rejects(fn()=>new \Kumwe\Integration\DomainListenerDefinition('acme.listener','business.record.changed',$versions,'1.0.0'));
+ rejects(fn()=>new WebhookContributionDefinition('acme.webhook',['business.record.changed'],$versions,'1.0.0','acme.delivery'));
+}
+rejects(fn()=>new EventConsumerDefinition('acme.consumer','business.record.changed',[1],'1.0.0',aggregateOrdered:false,idempotency:ConsumerIdempotency::AGGREGATE_VERSION));
+$lease=new \Kumwe\Integration\InboxLease($consumer,$integration,1,'worker-1',$id,'generation-1');
+check((new InboxClaimResult(InboxDisposition::CLAIMED,$lease))->lease===$lease,'Claimed inbox carries fencing lease');
+rejects(fn()=>new InboxClaimResult(InboxDisposition::DUPLICATE,$lease));
+rejects(fn()=>new \Kumwe\Integration\InboxLease($consumer,$integration,0,'worker-1',$id,'generation-1'));
+rejects(fn()=>new OutboxLease($integration,2,1,'worker-1',$id,'generation-1'));
+rejects(fn()=>new OutboxLease($integration,1,5,'worker-1','bad-token','generation-1'));
+check((new OutboxLease($integration,1,5,'worker-1',$id,'generation-1'))->event===$integration,'Outbox lease retains exact event');
+$processLease=new \Kumwe\Integration\ProcessWorkLease($id,1,'default','organization-1',$work,1,'worker-1',$id,'generation-1');
+check($processLease->work===$work,'Process lease validates canonical context and retains work');
+rejects(fn()=>new \Kumwe\Integration\ProcessWorkLease($id,0,'default',null,$work,1,'worker-1',$id,'generation-1'));
+check(EventSensitivity::PUBLIC->allowedBy(EventSensitivity::INTERNAL) && !EventSensitivity::INTERNAL->allowedBy(EventSensitivity::PUBLIC),'Sensitivity disclosure order is directional');
 fwrite(STDOUT,"integration: $assertions assertions passed\n");

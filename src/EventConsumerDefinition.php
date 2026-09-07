@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Kumwe\Integration;
 
-
-
 use InvalidArgumentException;
 
 /**
@@ -28,7 +26,7 @@ final readonly class EventConsumerDefinition implements IntegrationContract
      *
      * @param   string               $consumerId          Globally unique namespaced consumer identity.
      * @param   string               $eventType           Event contract consumed.
-     * @param   list<int>            $schemaVersions      Explicitly accepted schema revisions.
+     * @param   array<array-key, mixed>            $schemaVersions      Explicitly accepted schema revisions.
      * @param   string               $handlerVersion      Immutable executable handler revision.
      * @param   string               $queue               Logical delivery queue.
      * @param   bool                 $aggregateOrdered    Whether aggregate versions are processed in order.
@@ -58,10 +56,12 @@ final readonly class EventConsumerDefinition implements IntegrationContract
         if (!array_is_list($schemaVersions) || $schemaVersions === [] || count($schemaVersions) > 32) {
             throw new InvalidArgumentException('A consumer needs a bounded schema-version list.');
         }
+        $validatedVersions = [];
         foreach ($schemaVersions as $version) {
             if (!is_int($version) || $version < 1 || $version > 65_535) {
                 throw new InvalidArgumentException('A consumer schema version is invalid.');
             }
+            $validatedVersions[] = $version;
         }
         $canonicalVersions = array_values(array_unique($schemaVersions));
         sort($canonicalVersions, SORT_NUMERIC);
@@ -71,7 +71,7 @@ final readonly class EventConsumerDefinition implements IntegrationContract
         if ($idempotency === ConsumerIdempotency::AGGREGATE_VERSION && !$aggregateOrdered) {
             throw new InvalidArgumentException('Aggregate-version idempotency requires aggregate ordering.');
         }
-        $this->schemaVersions = $schemaVersions;
+        $this->schemaVersions = $validatedVersions;
     }
 
     /**

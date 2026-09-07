@@ -1,0 +1,7 @@
+parameters:
+    level: max
+    paths:
+        - src
+    tmpDir: .phpstan-cache
+    bootstrapFiles:
+        - tools/analysis-bootstrap.php

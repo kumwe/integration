@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Kumwe\Integration;
 
 use Kumwe\CanonicalJson\CanonicalEncoder;
-
 use Kumwe\Integration\IntegrationContractValidator;
 use DateTimeImmutable;
 use InvalidArgumentException;
@@ -84,10 +83,18 @@ final readonly class ProcessInstance
         if (($status === ProcessStatus::CANCELLED) !== ($cancellationBy !== null)) {
             throw new InvalidArgumentException('Only a cancelled process carries cancellation attribution.');
         }
-        if ($cancellationNote !== null && (trim($cancellationNote) === '' || mb_strlen($cancellationNote) > 1_000)) {
+        if (
+            $cancellationNote !== null
+            && (trim($cancellationNote) === '' || mb_strlen($cancellationNote) > 1_000)
+        ) {
             throw new InvalidArgumentException('A process cancellation note must contain 1 to 1000 characters.');
         }
-        IntegrationContractValidator::object($canonicalJson, $state, 'Process state', RecordedEventEnvelope::MAX_PAYLOAD_BYTES);
+        IntegrationContractValidator::object(
+            $canonicalJson,
+            $state,
+            'Process state',
+            RecordedEventEnvelope::MAX_PAYLOAD_BYTES,
+        );
         $this->state = $state;
     }
 

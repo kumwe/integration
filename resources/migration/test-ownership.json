@@ -1,0 +1,1356 @@
+[
+  {
+    "symbol": "Kumwe\\Integration\\EventSchemaDefinition",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php",
+        "sha256": "f0eec3a60319f6dab31ea74667953257cafec5eba801f6a65294b6b2890cfa04",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/HungEndpointDeadlineIntegrationTest.php",
+        "sha256": "d9f0c1321c4bbaee0f5184c189443560a82bfa418a0d089287fba51d6f8aa5e0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php",
+        "sha256": "322bc0b7cffe073a97285a808462c22a551a999185851a2623f16215feb71779",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/ProjectionRuntimePersistenceTest.php",
+        "sha256": "edc9379c5d77d3b6bd44a79e8670844e1be03d9bc38787a30d55b8060faf0be9",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/Persistence/TransactionBoundaryEngineIntegrationTest.php",
+        "sha256": "390e08d4b75a45812479ecfbdaa7f8b390ce5f8c85bcb37ef6fd3b1b337f4128",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/EventContractTest.php",
+        "sha256": "65c725aff80ef4f74a88e655765398e236a83155a7e996637f7bba1abb89fb37",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/OutboxDispatcherTest.php",
+        "sha256": "fef6d1e8728026635093bc8ede04d4ca6fe347902419acbaa332efc7d73cabc0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Domain/IntegrationContributionDefinitionTest.php",
+        "sha256": "70763bf08753d6d1d12af17807c8f0ad04a3d7e4650c31d19109afaa5fca70fd",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Functional/Extension/LiveSurfaceContractParityTest.php",
+        "sha256": "2e5b9ca9bd0211afe2500d04a204efe132119a6c87065498b992f1dca86d1516",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ProcessInstance",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessInstanceTest.php",
+        "sha256": "4d296358ab8bfed087e6c32c89082212b3b4774c14d906fc1b5ca1ed1319b0ac",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessCancellationWorkTest.php",
+        "sha256": "cf9a307bb7124a2da9a4d426b0df811594174503d885714c7e18e459812e7512",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ProcessStatus",
+    "kind": "enum",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessInstanceTest.php",
+        "sha256": "4d296358ab8bfed087e6c32c89082212b3b4774c14d906fc1b5ca1ed1319b0ac",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessCancellationWorkTest.php",
+        "sha256": "cf9a307bb7124a2da9a4d426b0df811594174503d885714c7e18e459812e7512",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ProcessTransition",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessInstanceTest.php",
+        "sha256": "4d296358ab8bfed087e6c32c89082212b3b4774c14d906fc1b5ca1ed1319b0ac",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ProcessWorkItem",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessInstanceTest.php",
+        "sha256": "4d296358ab8bfed087e6c32c89082212b3b4774c14d906fc1b5ca1ed1319b0ac",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessWorkDispatcherTest.php",
+        "sha256": "b6b66577228fe6a470fe468d472b490a296b97e045c34e4ea09bd68203d1772b",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessCancellationWorkTest.php",
+        "sha256": "cf9a307bb7124a2da9a4d426b0df811594174503d885714c7e18e459812e7512",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ProcessWorkKind",
+    "kind": "enum",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessInstanceTest.php",
+        "sha256": "4d296358ab8bfed087e6c32c89082212b3b4774c14d906fc1b5ca1ed1319b0ac",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessWorkDispatcherTest.php",
+        "sha256": "b6b66577228fe6a470fe468d472b490a296b97e045c34e4ea09bd68203d1772b",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessCancellationWorkTest.php",
+        "sha256": "cf9a307bb7124a2da9a4d426b0df811594174503d885714c7e18e459812e7512",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\RecordedDomainEvent",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/Extension/GeneratedExtensionLifecycleIntegrationTest.php",
+        "sha256": "8a108ec2d7c6d4aae13d9571065a53f7b98c55c0aacba04be8a5c5c5303f85ae",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/EventContractTest.php",
+        "sha256": "65c725aff80ef4f74a88e655765398e236a83155a7e996637f7bba1abb89fb37",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\RecordedEventEnvelope",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/EventContractTest.php",
+        "sha256": "65c725aff80ef4f74a88e655765398e236a83155a7e996637f7bba1abb89fb37",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/JobQueueIntegrationEventHandlerTest.php",
+        "sha256": "89226ff587962fca23c8ddc65638b868093be92f67f53c1682b60627d86a1f09",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\RecordedIntegrationEvent",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php",
+        "sha256": "f0eec3a60319f6dab31ea74667953257cafec5eba801f6a65294b6b2890cfa04",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/HungEndpointDeadlineIntegrationTest.php",
+        "sha256": "d9f0c1321c4bbaee0f5184c189443560a82bfa418a0d089287fba51d6f8aa5e0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php",
+        "sha256": "322bc0b7cffe073a97285a808462c22a551a999185851a2623f16215feb71779",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/ProjectionRuntimePersistenceTest.php",
+        "sha256": "edc9379c5d77d3b6bd44a79e8670844e1be03d9bc38787a30d55b8060faf0be9",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/Persistence/TransactionBoundaryEngineIntegrationTest.php",
+        "sha256": "390e08d4b75a45812479ecfbdaa7f8b390ce5f8c85bcb37ef6fd3b1b337f4128",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/EventContractTest.php",
+        "sha256": "65c725aff80ef4f74a88e655765398e236a83155a7e996637f7bba1abb89fb37",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/OutboxDispatcherTest.php",
+        "sha256": "fef6d1e8728026635093bc8ede04d4ca6fe347902419acbaa332efc7d73cabc0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/JobQueueIntegrationEventHandlerTest.php",
+        "sha256": "89226ff587962fca23c8ddc65638b868093be92f67f53c1682b60627d86a1f09",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ConsumerIdempotency",
+    "kind": "enum",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php",
+        "sha256": "f0eec3a60319f6dab31ea74667953257cafec5eba801f6a65294b6b2890cfa04",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php",
+        "sha256": "322bc0b7cffe073a97285a808462c22a551a999185851a2623f16215feb71779",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\DomainEvent",
+    "kind": "interface",
+    "portable_tests": [],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/BusinessRecordMutationEventPublisherTest.php",
+        "sha256": "e3c1ee69f212864cac6ca38c832e5840c86901af1e9cf9519015d4a600627e19",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/OwnedBindingCanonicalDriftTest.php",
+        "sha256": "ef7c2ae4f4275e3882e78c513cde0a3dd20d1fca731c62f184b25f8fad105c32",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/ExtensionBindingSurfaceTest.php",
+        "sha256": "3e4b7f69bc38ef7d9f9d56e53d5affd90913f36799316d592315058ac693b1a2",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/ScaffoldExecutionTest.php",
+        "sha256": "40a6761c02e8212f1e1fc6be09026c670b94146bedb9414d0a7ed56df22a2348",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "neutral port contract"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\DomainListenerDeclaration",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/PortableValueBoundaryTest.php",
+        "sha256": "1991104256a634dd5795c39f851f9ee44a728077f817cb2b5544d47549aa1dc1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\DomainListenerDefinition",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/Extension/GeneratedExtensionLifecycleIntegrationTest.php",
+        "sha256": "8a108ec2d7c6d4aae13d9571065a53f7b98c55c0aacba04be8a5c5c5303f85ae",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/BusinessRecordMutationEventPublisherTest.php",
+        "sha256": "e3c1ee69f212864cac6ca38c832e5840c86901af1e9cf9519015d4a600627e19",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/OwnedBindingCanonicalDriftTest.php",
+        "sha256": "ef7c2ae4f4275e3882e78c513cde0a3dd20d1fca731c62f184b25f8fad105c32",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/ExtensionBindingSurfaceTest.php",
+        "sha256": "3e4b7f69bc38ef7d9f9d56e53d5affd90913f36799316d592315058ac693b1a2",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/TypedDeclarationTest.php",
+        "sha256": "fb42ebf95ad89da7c031621c494ef48bf56c04093423b00d09f5dc4cffabce73",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/TypedDefinitionTest.php",
+        "sha256": "72fb74025da70834dea267566220b6997c2e1da6fad06713c843bbc1d7dccc1e",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/ScaffoldExecutionTest.php",
+        "sha256": "40a6761c02e8212f1e1fc6be09026c670b94146bedb9414d0a7ed56df22a2348",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\EventConsumerDeclaration",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/PortableValueBoundaryTest.php",
+        "sha256": "1991104256a634dd5795c39f851f9ee44a728077f817cb2b5544d47549aa1dc1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\EventConsumerDefinition",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php",
+        "sha256": "f0eec3a60319f6dab31ea74667953257cafec5eba801f6a65294b6b2890cfa04",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php",
+        "sha256": "322bc0b7cffe073a97285a808462c22a551a999185851a2623f16215feb71779",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/EventContractTest.php",
+        "sha256": "65c725aff80ef4f74a88e655765398e236a83155a7e996637f7bba1abb89fb37",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/JobQueueIntegrationEventHandlerTest.php",
+        "sha256": "89226ff587962fca23c8ddc65638b868093be92f67f53c1682b60627d86a1f09",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/OwnedBindingCanonicalDriftTest.php",
+        "sha256": "ef7c2ae4f4275e3882e78c513cde0a3dd20d1fca731c62f184b25f8fad105c32",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/ExtensionBindingSurfaceTest.php",
+        "sha256": "3e4b7f69bc38ef7d9f9d56e53d5affd90913f36799316d592315058ac693b1a2",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Functional/Extension/LiveSurfaceContractParityTest.php",
+        "sha256": "2e5b9ca9bd0211afe2500d04a204efe132119a6c87065498b992f1dca86d1516",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/TypedDeclarationTest.php",
+        "sha256": "fb42ebf95ad89da7c031621c494ef48bf56c04093423b00d09f5dc4cffabce73",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/TypedDefinitionTest.php",
+        "sha256": "72fb74025da70834dea267566220b6997c2e1da6fad06713c843bbc1d7dccc1e",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/ScaffoldExecutionTest.php",
+        "sha256": "40a6761c02e8212f1e1fc6be09026c670b94146bedb9414d0a7ed56df22a2348",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\EventEnvelope",
+    "kind": "interface",
+    "portable_tests": [],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [],
+    "ownership": "neutral port contract"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\EventSensitivity",
+    "kind": "enum",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php",
+        "sha256": "f0eec3a60319f6dab31ea74667953257cafec5eba801f6a65294b6b2890cfa04",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/HungEndpointDeadlineIntegrationTest.php",
+        "sha256": "d9f0c1321c4bbaee0f5184c189443560a82bfa418a0d089287fba51d6f8aa5e0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php",
+        "sha256": "322bc0b7cffe073a97285a808462c22a551a999185851a2623f16215feb71779",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/ProjectionRuntimePersistenceTest.php",
+        "sha256": "edc9379c5d77d3b6bd44a79e8670844e1be03d9bc38787a30d55b8060faf0be9",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/Persistence/TransactionBoundaryEngineIntegrationTest.php",
+        "sha256": "390e08d4b75a45812479ecfbdaa7f8b390ce5f8c85bcb37ef6fd3b1b337f4128",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/Extension/GeneratedExtensionLifecycleIntegrationTest.php",
+        "sha256": "8a108ec2d7c6d4aae13d9571065a53f7b98c55c0aacba04be8a5c5c5303f85ae",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/EventContractTest.php",
+        "sha256": "65c725aff80ef4f74a88e655765398e236a83155a7e996637f7bba1abb89fb37",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/OutboxDispatcherTest.php",
+        "sha256": "fef6d1e8728026635093bc8ede04d4ca6fe347902419acbaa332efc7d73cabc0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Domain/IntegrationContributionDefinitionTest.php",
+        "sha256": "70763bf08753d6d1d12af17807c8f0ad04a3d7e4650c31d19109afaa5fca70fd",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/JobQueueIntegrationEventHandlerTest.php",
+        "sha256": "89226ff587962fca23c8ddc65638b868093be92f67f53c1682b60627d86a1f09",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/ScaffoldExecutionTest.php",
+        "sha256": "40a6761c02e8212f1e1fc6be09026c670b94146bedb9414d0a7ed56df22a2348",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\IntegrationContract",
+    "kind": "interface",
+    "portable_tests": [],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [],
+    "ownership": "neutral port contract"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\IntegrationContractValidator",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\IntegrationEvent",
+    "kind": "interface",
+    "portable_tests": [],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php",
+        "sha256": "f0eec3a60319f6dab31ea74667953257cafec5eba801f6a65294b6b2890cfa04",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/HungEndpointDeadlineIntegrationTest.php",
+        "sha256": "d9f0c1321c4bbaee0f5184c189443560a82bfa418a0d089287fba51d6f8aa5e0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php",
+        "sha256": "322bc0b7cffe073a97285a808462c22a551a999185851a2623f16215feb71779",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/ProjectionRuntimePersistenceTest.php",
+        "sha256": "edc9379c5d77d3b6bd44a79e8670844e1be03d9bc38787a30d55b8060faf0be9",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/Persistence/TransactionBoundaryEngineIntegrationTest.php",
+        "sha256": "390e08d4b75a45812479ecfbdaa7f8b390ce5f8c85bcb37ef6fd3b1b337f4128",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/OutboxDispatcherTest.php",
+        "sha256": "fef6d1e8728026635093bc8ede04d4ca6fe347902419acbaa332efc7d73cabc0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/BusinessRecordMutationEventPublisherTest.php",
+        "sha256": "e3c1ee69f212864cac6ca38c832e5840c86901af1e9cf9519015d4a600627e19",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/OwnedBindingCanonicalDriftTest.php",
+        "sha256": "ef7c2ae4f4275e3882e78c513cde0a3dd20d1fca731c62f184b25f8fad105c32",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/ExtensionBindingSurfaceTest.php",
+        "sha256": "3e4b7f69bc38ef7d9f9d56e53d5affd90913f36799316d592315058ac693b1a2",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessRecord/Application/BusinessRecordMutationPublicationTest.php",
+        "sha256": "d2ce1a1d129689404005b85fe7aa65ae8f76b45685a379d9b31f63a6abc5fe51",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/ScaffoldExecutionTest.php",
+        "sha256": "40a6761c02e8212f1e1fc6be09026c670b94146bedb9414d0a7ed56df22a2348",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "neutral port contract"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\WebhookContributionDefinition",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/OwnedBindingCanonicalDriftTest.php",
+        "sha256": "ef7c2ae4f4275e3882e78c513cde0a3dd20d1fca731c62f184b25f8fad105c32",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/Extension/Contribution/ExtensionBindingSurfaceTest.php",
+        "sha256": "3e4b7f69bc38ef7d9f9d56e53d5affd90913f36799316d592315058ac693b1a2",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/TypedDeclarationTest.php",
+        "sha256": "fb42ebf95ad89da7c031621c494ef48bf56c04093423b00d09f5dc4cffabce73",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/TypedDefinitionTest.php",
+        "sha256": "72fb74025da70834dea267566220b6997c2e1da6fad06713c843bbc1d7dccc1e",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/ScaffoldExecutionTest.php",
+        "sha256": "40a6761c02e8212f1e1fc6be09026c670b94146bedb9414d0a7ed56df22a2348",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\WebhookDeclaration",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "extension-sdk",
+        "path": "tests/Case/PortableValueBoundaryTest.php",
+        "sha256": "1991104256a634dd5795c39f851f9ee44a728077f817cb2b5544d47549aa1dc1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\OutboxStore",
+    "kind": "interface",
+    "portable_tests": [],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Support/AssetInspectionDeploymentAcceptance.php",
+        "sha256": "3e7a9b583a37dd9c3639f39cca5856fee3e5f565472e804e02c1a13640d86245",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/OutboxDispatcherTest.php",
+        "sha256": "fef6d1e8728026635093bc8ede04d4ca6fe347902419acbaa332efc7d73cabc0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/IntegrationOperationsServiceTest.php",
+        "sha256": "a14fd8858de225bd960954eb00e9eaa0496f9c19fa5d34f29d66de3540efb2d1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/BusinessRecordMutationEventPublisherTest.php",
+        "sha256": "e3c1ee69f212864cac6ca38c832e5840c86901af1e9cf9519015d4a600627e19",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessRecord/Application/BusinessRecordMutationPublicationTest.php",
+        "sha256": "d2ce1a1d129689404005b85fe7aa65ae8f76b45685a379d9b31f63a6abc5fe51",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "neutral port contract"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\InboxStore",
+    "kind": "interface",
+    "portable_tests": [],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Support/AssetInspectionDeploymentAcceptance.php",
+        "sha256": "3e7a9b583a37dd9c3639f39cca5856fee3e5f565472e804e02c1a13640d86245",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/IntegrationOperationsServiceTest.php",
+        "sha256": "a14fd8858de225bd960954eb00e9eaa0496f9c19fa5d34f29d66de3540efb2d1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "neutral port contract"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ProcessManagerStore",
+    "kind": "interface",
+    "portable_tests": [],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessWorkDispatcherTest.php",
+        "sha256": "b6b66577228fe6a470fe468d472b490a296b97e045c34e4ea09bd68203d1772b",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessCancellationWorkTest.php",
+        "sha256": "cf9a307bb7124a2da9a4d426b0df811594174503d885714c7e18e459812e7512",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/IntegrationOperationsServiceTest.php",
+        "sha256": "a14fd8858de225bd960954eb00e9eaa0496f9c19fa5d34f29d66de3540efb2d1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "neutral port contract"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ProcessManagerHandler",
+    "kind": "interface",
+    "portable_tests": [],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [],
+    "ownership": "neutral port contract"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\EventContractRegistry",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php",
+        "sha256": "f0eec3a60319f6dab31ea74667953257cafec5eba801f6a65294b6b2890cfa04",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/HungEndpointDeadlineIntegrationTest.php",
+        "sha256": "d9f0c1321c4bbaee0f5184c189443560a82bfa418a0d089287fba51d6f8aa5e0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php",
+        "sha256": "322bc0b7cffe073a97285a808462c22a551a999185851a2623f16215feb71779",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/ProjectionRuntimePersistenceTest.php",
+        "sha256": "edc9379c5d77d3b6bd44a79e8670844e1be03d9bc38787a30d55b8060faf0be9",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/Persistence/TransactionBoundaryEngineIntegrationTest.php",
+        "sha256": "390e08d4b75a45812479ecfbdaa7f8b390ce5f8c85bcb37ef6fd3b1b337f4128",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/Extension/GeneratedExtensionLifecycleIntegrationTest.php",
+        "sha256": "8a108ec2d7c6d4aae13d9571065a53f7b98c55c0aacba04be8a5c5c5303f85ae",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/EventContractTest.php",
+        "sha256": "65c725aff80ef4f74a88e655765398e236a83155a7e996637f7bba1abb89fb37",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/OutboxDispatcherTest.php",
+        "sha256": "fef6d1e8728026635093bc8ede04d4ca6fe347902419acbaa332efc7d73cabc0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessCancellationWorkTest.php",
+        "sha256": "cf9a307bb7124a2da9a4d426b0df811594174503d885714c7e18e459812e7512",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/IntegrationOperationsServiceTest.php",
+        "sha256": "a14fd8858de225bd960954eb00e9eaa0496f9c19fa5d34f29d66de3540efb2d1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Functional/Extension/LiveSurfaceContractParityTest.php",
+        "sha256": "2e5b9ca9bd0211afe2500d04a204efe132119a6c87065498b992f1dca86d1516",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\PayloadSchemaValidator",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Functional/Extension/LiveSurfaceContractParityTest.php",
+        "sha256": "2e5b9ca9bd0211afe2500d04a204efe132119a6c87065498b992f1dca86d1516",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\InboxDisposition",
+    "kind": "enum",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php",
+        "sha256": "f0eec3a60319f6dab31ea74667953257cafec5eba801f6a65294b6b2890cfa04",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php",
+        "sha256": "3343e80c6bb22916e8c19f2855c3d8bdd20e1341d13430b1a6685012fc4c6525",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php",
+        "sha256": "322bc0b7cffe073a97285a808462c22a551a999185851a2623f16215feb71779",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\InboxClaimResult",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php",
+        "sha256": "e7ff8332cdc755ed762d88ef4e83a3d5801803105d351b026e1a42efcd466954",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php",
+        "sha256": "6be61e86fc0f39777ab39c8281bbbe229b618ad0d0f5011fd9f4dc940138cd52",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\InboxLease",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php",
+        "sha256": "6870f5aa49d8559b0b8383ae1cb0e356a6bce1f3722a76b92ee17737a228e3a1",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      },
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php",
+        "sha256": "ffc0ceedf72b347688c4896a5daf1f8c0af8c457dc3ea64cdfacc4a151340671",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\OutboxLease",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/OutboxDispatcherTest.php",
+        "sha256": "fef6d1e8728026635093bc8ede04d4ca6fe347902419acbaa332efc7d73cabc0",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  },
+  {
+    "symbol": "Kumwe\\Integration\\ProcessWorkLease",
+    "kind": "class",
+    "portable_tests": [
+      "tests/run.php"
+    ],
+    "boundary_gate": "tools/verify.php --manifests",
+    "archive_gate": "tools/verify-clean-consumer.php",
+    "source_tests": [
+      {
+        "repository": "app",
+        "path": "tests/Unit/BusinessIntegration/ProcessWorkDispatcherTest.php",
+        "sha256": "b6b66577228fe6a470fe468d472b490a296b97e045c34e4ea09bd68203d1772b",
+        "status": "retained source evidence; host tests are not claimed as portable tests"
+      }
+    ],
+    "ownership": "portable package behavior"
+  }
+]

@@ -1,0 +1,390 @@
+[
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\EventSchemaDefinition",
+    "new_fqcn": "Kumwe\\Integration\\EventSchemaDefinition",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/Kernel/ContainerFactory.php",
+      "src/BusinessIntegration/Application/EventContractRegistry.php",
+      "src/Extension/Contribution/CanonicalManifestInterpreter.php",
+      "src/Extension/Contribution/ExtensionContributionRegistrySet.php",
+      "src/Extension/Contribution/CoreContributionRegistrar.php",
+      "src/Extension/Contribution/CoreExtensionContributions.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessInstance",
+    "new_fqcn": "Kumwe\\Integration\\ProcessInstance",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineProcessManagerStore.php",
+      "src/BusinessIntegration/Application/IntegrationOperationsService.php",
+      "src/BusinessIntegration/Application/ProcessManagerService.php",
+      "src/BusinessIntegration/Application/ProcessManagerStore.php",
+      "src/BusinessIntegration/Application/ProcessManagerHandler.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessStatus",
+    "new_fqcn": "Kumwe\\Integration\\ProcessStatus",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineProcessManagerStore.php",
+      "src/BusinessIntegration/Application/ProcessManagerService.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessTransition",
+    "new_fqcn": "Kumwe\\Integration\\ProcessTransition",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Application/ProcessManagerService.php",
+      "src/BusinessIntegration/Application/ProcessManagerHandler.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessWorkItem",
+    "new_fqcn": "Kumwe\\Integration\\ProcessWorkItem",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineProcessManagerStore.php",
+      "src/BusinessIntegration/Application/ProcessWorkLease.php",
+      "src/BusinessIntegration/Application/ProcessManagerService.php",
+      "src/BusinessIntegration/Application/ProcessManagerStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessWorkKind",
+    "new_fqcn": "Kumwe\\Integration\\ProcessWorkKind",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineProcessManagerStore.php",
+      "src/BusinessIntegration/Application/JobQueueProcessWorkHandler.php",
+      "src/BusinessIntegration/Application/ProcessWorkHandler.php",
+      "src/BusinessIntegration/Application/ProcessManagerService.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\RecordedDomainEvent",
+    "new_fqcn": "Kumwe\\Integration\\RecordedDomainEvent",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Application/BusinessRecordMutationEventPublisher.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\RecordedEventEnvelope",
+    "new_fqcn": "Kumwe\\Integration\\RecordedEventEnvelope",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineOutboxStore.php",
+      "src/BusinessIntegration/Infrastructure/DoctrineInboxStore.php",
+      "src/BusinessIntegration/Application/JobQueueIntegrationEventHandler.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\RecordedIntegrationEvent",
+    "new_fqcn": "Kumwe\\Integration\\RecordedIntegrationEvent",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineOutboxStore.php",
+      "src/BusinessIntegration/Application/BusinessRecordMutationEventPublisher.php",
+      "src/BusinessReporting/Infrastructure/DoctrineProjectionStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\ConsumerIdempotency",
+    "new_fqcn": "Kumwe\\Integration\\ConsumerIdempotency",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [
+      "src/Manifest/ManifestContributionGraphValidator.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\DomainEvent",
+    "new_fqcn": "Kumwe\\Integration\\DomainEvent",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [
+      "src/Spi/BusinessIntegration/Application/DomainEventHandler.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\DomainListenerDeclaration",
+    "new_fqcn": "Kumwe\\Integration\\DomainListenerDeclaration",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\DomainListenerDefinition",
+    "new_fqcn": "Kumwe\\Integration\\DomainListenerDefinition",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [
+      "src/Manifest/ManifestContributions.php",
+      "src/Manifest/ManifestContributionGraphValidator.php",
+      "src/Spi/BusinessIntegration/Application/DomainEventHandler.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\EventConsumerDeclaration",
+    "new_fqcn": "Kumwe\\Integration\\EventConsumerDeclaration",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\EventConsumerDefinition",
+    "new_fqcn": "Kumwe\\Integration\\EventConsumerDefinition",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [
+      "src/Manifest/ManifestContributions.php",
+      "src/Manifest/ManifestContributionGraphValidator.php",
+      "src/Spi/BusinessIntegration/Application/IntegrationEventHandler.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\EventEnvelope",
+    "new_fqcn": "Kumwe\\Integration\\EventEnvelope",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\EventSensitivity",
+    "new_fqcn": "Kumwe\\Integration\\EventSensitivity",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [
+      "src/Manifest/ManifestContributionGraphValidator.php",
+      "src/Spi/BusinessReporting/Domain/ProjectionDefinition.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\IntegrationContract",
+    "new_fqcn": "Kumwe\\Integration\\IntegrationContract",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [
+      "src/Spi/BusinessReporting/Domain/ProjectionDefinition.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\IntegrationContractValidator",
+    "new_fqcn": "Kumwe\\Integration\\IntegrationContractValidator",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\IntegrationEvent",
+    "new_fqcn": "Kumwe\\Integration\\IntegrationEvent",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [
+      "src/Spi/BusinessIntegration/Application/IntegrationEventHandler.php",
+      "src/Spi/BusinessIntegration/Application/IntegrationEventTransport.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\WebhookContributionDefinition",
+    "new_fqcn": "Kumwe\\Integration\\WebhookContributionDefinition",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [
+      "src/Manifest/ManifestContributions.php",
+      "src/Manifest/ManifestContributionGraphValidator.php",
+      "src/Spi/BusinessIntegration/Application/IntegrationEventTransport.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\WebhookDeclaration",
+    "new_fqcn": "Kumwe\\Integration\\WebhookDeclaration",
+    "repository": "extension-sdk",
+    "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+    "explicit_import_consumers": [],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\OutboxStore",
+    "new_fqcn": "Kumwe\\Integration\\OutboxStore",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/Kernel/ContainerFactory.php",
+      "src/BusinessIntegration/Infrastructure/DoctrineOutboxStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\InboxStore",
+    "new_fqcn": "Kumwe\\Integration\\InboxStore",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/Kernel/ContainerFactory.php",
+      "src/BusinessIntegration/Infrastructure/DoctrineInboxStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\ProcessManagerStore",
+    "new_fqcn": "Kumwe\\Integration\\ProcessManagerStore",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/Kernel/ContainerFactory.php",
+      "src/BusinessIntegration/Infrastructure/DoctrineProcessManagerStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\ProcessManagerHandler",
+    "new_fqcn": "Kumwe\\Integration\\ProcessManagerHandler",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\EventContractRegistry",
+    "new_fqcn": "Kumwe\\Integration\\EventContractRegistry",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/Kernel/ContainerFactory.php",
+      "src/BusinessIntegration/Infrastructure/DoctrineOutboxStore.php",
+      "src/BusinessIntegration/Infrastructure/DoctrineInboxStore.php",
+      "src/Extension/Contribution/ExtensionContributionRegistrySet.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\PayloadSchemaValidator",
+    "new_fqcn": "Kumwe\\Integration\\PayloadSchemaValidator",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/ContributedScheduleSynchronizer.php",
+      "src/Extension/Contribution/ExtensionContributionRegistrySet.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\InboxDisposition",
+    "new_fqcn": "Kumwe\\Integration\\InboxDisposition",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineInboxStore.php",
+      "src/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransport.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\InboxClaimResult",
+    "new_fqcn": "Kumwe\\Integration\\InboxClaimResult",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineInboxStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\InboxLease",
+    "new_fqcn": "Kumwe\\Integration\\InboxLease",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineInboxStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\OutboxLease",
+    "new_fqcn": "Kumwe\\Integration\\OutboxLease",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineOutboxStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\ProcessWorkLease",
+    "new_fqcn": "Kumwe\\Integration\\ProcessWorkLease",
+    "repository": "app",
+    "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+    "explicit_import_consumers": [
+      "src/BusinessIntegration/Infrastructure/DoctrineProcessManagerStore.php"
+    ],
+    "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
+    "adoption": "blocked pending immutable verified dependency releases"
+  }
+]

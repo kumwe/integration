@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Kumwe\Integration;
 
-
-
 use InvalidArgumentException;
 
 /**
@@ -40,7 +38,7 @@ final readonly class WebhookContributionDefinition implements IntegrationContrac
      *
      * @param   string               $adapterId           Namespaced outbound adapter identity.
      * @param   list<string>         $eventTypes          Non-empty event type allowlist.
-     * @param   list<int>            $schemaVersions      Exact accepted schema revisions.
+     * @param   array<array-key, mixed>            $schemaVersions      Exact accepted schema revisions.
      * @param   string               $handlerVersion      Immutable executable revision.
      * @param   string               $queue               Declared logical delivery queue.
      * @param   ConsumerIdempotency  $idempotency         Receipt strategy required before the outbound effect runs.
@@ -71,17 +69,19 @@ final readonly class WebhookContributionDefinition implements IntegrationContrac
         if ($schemaVersions === [] || count($schemaVersions) > 32) {
             throw new InvalidArgumentException('An outbound adapter must accept a bounded schema-version set.');
         }
+        $validatedVersions = [];
         foreach ($schemaVersions as $version) {
             if (!is_int($version) || $version < 1 || $version > 65_535) {
                 throw new InvalidArgumentException('An outbound adapter schema version is invalid.');
             }
+            $validatedVersions[] = $version;
         }
         $canonicalVersions = array_values(array_unique($schemaVersions));
         sort($canonicalVersions, SORT_NUMERIC);
         if ($schemaVersions !== $canonicalVersions) {
             throw new InvalidArgumentException('Outbound adapter schema versions must be unique and sorted.');
         }
-        $this->schemaVersions = $schemaVersions;
+        $this->schemaVersions = $validatedVersions;
     }
 
     /**
