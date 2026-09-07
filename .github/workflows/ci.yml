@@ -1,0 +1,67 @@
+name: Integration CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: github.event_name != 'push' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    name: PHP 8.5
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out package
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Set up PHP
+        uses: shivammathur/setup-php@f3e473d116dcccaddc5834248c87452386958240
+        with:
+          php-version: '8.5'
+          extensions: mbstring, tokenizer, dom, xml, xmlwriter, zip
+          coverage: none
+          tools: composer:v2
+      - name: Install stable dependencies and package toolchain
+        run: |
+          composer validate --strict
+          composer install --no-interaction --prefer-dist
+          composer audit --abandoned=fail
+      - name: Run package source checks and behavior tests
+        run: composer check
+      - name: Verify authoritative archive consumer
+        run: composer clean-consumer
+
+  release-tests:
+    if: github.event_name != 'push' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    name: Release automation tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Verify release transitions and dependency identity
+        run: |
+          bash tools/test-release-record.sh
+          bash tools/test-release-integrity.sh
+          bash tools/test-release-on-record.sh
+          bash tools/test-package-dependencies.sh
+
+  package-gate:
+    name: Package gate
+    if: always() && (github.event_name != 'push' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch))
+    needs: [check, release-tests]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Require all package and release tests
+        env:
+          PACKAGE_RESULT: ${{ needs.check.result }}
+          RELEASE_RESULT: ${{ needs.release-tests.result }}
+        run: test "$PACKAGE_RESULT" = success && test "$RELEASE_RESULT" = success
