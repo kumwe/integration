@@ -25,14 +25,14 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: kumwe/canonical-json
-          ref: 022218b364625f85307f0d9585a3d48404c0d437
+          ref: e7006a2580a49a1c8ab507b0d7b9c3403b4f9f58
           path: dependencies/canonical-json
           persist-credentials: false
       - name: Check out automation candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: kumwe/automation
-          ref: d8f62b8b687308c403b085012ff624faa6cbca5d
+          ref: 5bb46bc6c87abd33812ab5a935a198cb36a86cda
           path: dependencies/automation
           persist-credentials: false
       - name: Set up PHP

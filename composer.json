@@ -5,10 +5,10 @@
   "license": "Apache-2.0",
   "require": {
     "php": "^8.5",
-    "kumwe/canonical-json": "dev-agent/canonical-encoder-port-v2",
+    "kumwe/canonical-json": "dev-main",
     "kumwe/contribution": "^0.1",
     "kumwe/access-context": "^0.1",
-    "kumwe/automation": "dev-main",
+    "kumwe/automation": "dev-main || dev-agent/canonical-main-dependency-v2",
     "ramsey/uuid": "^4.7",
     "ext-mbstring": "*"
   },
