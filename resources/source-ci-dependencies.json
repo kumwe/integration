@@ -4,7 +4,7 @@
     "ref": "022218b364625f85307f0d9585a3d48404c0d437"
   },
   "kumwe/automation": {
-    "version": "dev-agent/extract-automation-v2",
-    "ref": "9982d8ac9ca6bc28b15913b2942d59685bbf6c29"
+    "version": "dev-main",
+    "ref": "d8f62b8b687308c403b085012ff624faa6cbca5d"
   }
 }

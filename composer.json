@@ -8,7 +8,7 @@
     "kumwe/canonical-json": "dev-agent/canonical-encoder-port-v2",
     "kumwe/contribution": "^0.1",
     "kumwe/access-context": "^0.1",
-    "kumwe/automation": "dev-agent/extract-automation-v2",
+    "kumwe/automation": "dev-main",
     "ramsey/uuid": "^4.7",
     "ext-mbstring": "*"
   },
