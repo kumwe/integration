@@ -1,11 +1,14 @@
 name: Source candidate CI
 on:
+  push:
+    branches: ['**']
   pull_request:
   workflow_call:
 permissions:
   contents: read
 jobs:
   source-candidate:
+    if: github.event_name != 'push' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     name: Source candidate gate
     runs-on: ubuntu-latest
     timeout-minutes: 15
