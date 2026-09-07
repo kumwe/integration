@@ -1,0 +1,15 @@
+{
+    "package": "kumwe/integration",
+    "ports": [
+        "Kumwe\\Integration\\DomainEvent",
+        "Kumwe\\Integration\\EventEnvelope",
+        "Kumwe\\Integration\\InboxStore",
+        "Kumwe\\Integration\\IntegrationContract",
+        "Kumwe\\Integration\\IntegrationEvent",
+        "Kumwe\\Integration\\OutboxStore",
+        "Kumwe\\Integration\\ProcessManagerHandler",
+        "Kumwe\\Integration\\ProcessManagerStore"
+    ],
+    "bindings": [],
+    "composition": "Host supplies explicit constructor dependencies and implements ports. This package performs no automatic registration."
+}

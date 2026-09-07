@@ -1,0 +1,299 @@
+[
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\EventSchemaDefinition",
+        "new_fqcn": "Kumwe\\Integration\\EventSchemaDefinition",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/EventSchemaDefinition.php",
+        "source_sha256": "48188e4d3db7b36af1e5e52bd0c365551c9ed0d0fe19a32ac788aa61a036e813",
+        "target_path": "src/EventSchemaDefinition.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessInstance",
+        "new_fqcn": "Kumwe\\Integration\\ProcessInstance",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/ProcessInstance.php",
+        "source_sha256": "9780757aefe91ea090a44f43f31bf30eaf15de691d006fb4f88501986c17172b",
+        "target_path": "src/ProcessInstance.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessStatus",
+        "new_fqcn": "Kumwe\\Integration\\ProcessStatus",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/ProcessStatus.php",
+        "source_sha256": "4e0d587231015b72b61093135c2b08586057603b39a1561330017111a0b299cb",
+        "target_path": "src/ProcessStatus.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessTransition",
+        "new_fqcn": "Kumwe\\Integration\\ProcessTransition",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/ProcessTransition.php",
+        "source_sha256": "87f2d161b8ea008fa268a020485d1cb3eaaa753d7fec71c0b6a72dd0b4a9ca7a",
+        "target_path": "src/ProcessTransition.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessWorkItem",
+        "new_fqcn": "Kumwe\\Integration\\ProcessWorkItem",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/ProcessWorkItem.php",
+        "source_sha256": "a4141a6fcd7ef918ba9c7c843d1f63b593d292a5a7df3d11a3abcb5619a466f0",
+        "target_path": "src/ProcessWorkItem.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\ProcessWorkKind",
+        "new_fqcn": "Kumwe\\Integration\\ProcessWorkKind",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/ProcessWorkKind.php",
+        "source_sha256": "bcc5cbd6280d97f44f970c6112e3d113bf3295b06c0bc2087f9ced0cd4a5b03d",
+        "target_path": "src/ProcessWorkKind.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\RecordedDomainEvent",
+        "new_fqcn": "Kumwe\\Integration\\RecordedDomainEvent",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/RecordedDomainEvent.php",
+        "source_sha256": "ac87cd8a6e998773652c33cd955becf66219efb18482729080a46315ba15c650",
+        "target_path": "src/RecordedDomainEvent.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\RecordedEventEnvelope",
+        "new_fqcn": "Kumwe\\Integration\\RecordedEventEnvelope",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/RecordedEventEnvelope.php",
+        "source_sha256": "35aa7c0a85e2b8282ce07bed87393094fd71be16ad06d63df89870014917bfc0",
+        "target_path": "src/RecordedEventEnvelope.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Domain\\RecordedIntegrationEvent",
+        "new_fqcn": "Kumwe\\Integration\\RecordedIntegrationEvent",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Domain/RecordedIntegrationEvent.php",
+        "source_sha256": "734b2205936ebe295ed5cb6726b8b994bd96d85f31eea4332c7546423f07d309",
+        "target_path": "src/RecordedIntegrationEvent.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\ConsumerIdempotency",
+        "new_fqcn": "Kumwe\\Integration\\ConsumerIdempotency",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/ConsumerIdempotency.php",
+        "source_sha256": "cbceb8caad3fc559e31140e5b653437d2cbe14d92acf93615a3fe554c2bcd085",
+        "target_path": "src/ConsumerIdempotency.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\DomainEvent",
+        "new_fqcn": "Kumwe\\Integration\\DomainEvent",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/DomainEvent.php",
+        "source_sha256": "73107e974c693feccacd99a10d90be83dd0d32c97a417681f73c898d400c0903",
+        "target_path": "src/DomainEvent.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\DomainListenerDeclaration",
+        "new_fqcn": "Kumwe\\Integration\\DomainListenerDeclaration",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/DomainListenerDeclaration.php",
+        "source_sha256": "21b1c24234022586319938a8c9361f51fb445f9d00ca7927363db124fece8827",
+        "target_path": "src/DomainListenerDeclaration.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\DomainListenerDefinition",
+        "new_fqcn": "Kumwe\\Integration\\DomainListenerDefinition",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/DomainListenerDefinition.php",
+        "source_sha256": "8e04d454d8cee58bcc8d22e63882827ea37be0f168bde461b60f6291a1ab5a01",
+        "target_path": "src/DomainListenerDefinition.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\EventConsumerDeclaration",
+        "new_fqcn": "Kumwe\\Integration\\EventConsumerDeclaration",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/EventConsumerDeclaration.php",
+        "source_sha256": "3145584bccf6375d7eec9ea9be8c945f57ce89e7ce572fec1f4a2f5d2fe0a0c4",
+        "target_path": "src/EventConsumerDeclaration.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\EventConsumerDefinition",
+        "new_fqcn": "Kumwe\\Integration\\EventConsumerDefinition",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/EventConsumerDefinition.php",
+        "source_sha256": "699347d4dd56faf8d8a624e778d0a1bbbb1103cee7a38958caace646eb315036",
+        "target_path": "src/EventConsumerDefinition.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\EventEnvelope",
+        "new_fqcn": "Kumwe\\Integration\\EventEnvelope",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/EventEnvelope.php",
+        "source_sha256": "c2b53ecbaf2eb3031cb8817e484cfccbe0fc2f2536e98992f6a539aca9e4baf0",
+        "target_path": "src/EventEnvelope.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\EventSensitivity",
+        "new_fqcn": "Kumwe\\Integration\\EventSensitivity",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/EventSensitivity.php",
+        "source_sha256": "b3e08ab19e24b885b70fabcdd08ba541f812ca6776096a537d21913e5eed5e7b",
+        "target_path": "src/EventSensitivity.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\IntegrationContract",
+        "new_fqcn": "Kumwe\\Integration\\IntegrationContract",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/IntegrationContract.php",
+        "source_sha256": "60fadaaf169a25fa88af3c49eac1f0b03eb226f9f4de3fa27ab3100d28ecd04a",
+        "target_path": "src/IntegrationContract.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\IntegrationContractValidator",
+        "new_fqcn": "Kumwe\\Integration\\IntegrationContractValidator",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/IntegrationContractValidator.php",
+        "source_sha256": "62eef65ddc42ee6c9cdc8bf6ecd338cae4f5723be9c2a1b618be0dbe2c45ded9",
+        "target_path": "src/IntegrationContractValidator.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\IntegrationEvent",
+        "new_fqcn": "Kumwe\\Integration\\IntegrationEvent",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/IntegrationEvent.php",
+        "source_sha256": "48630e04fd7e70318d7d228f8cdb6e9ba7cbf0c2f2c843a79ce605d38d445fd2",
+        "target_path": "src/IntegrationEvent.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\WebhookContributionDefinition",
+        "new_fqcn": "Kumwe\\Integration\\WebhookContributionDefinition",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/WebhookContributionDefinition.php",
+        "source_sha256": "84fef2804288f1bd5fde4caaeac6bcdc1019b500c39f260af25b5adc44e755e8",
+        "target_path": "src/WebhookContributionDefinition.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\Extension\\Spi\\BusinessIntegration\\Domain\\WebhookDeclaration",
+        "new_fqcn": "Kumwe\\Integration\\WebhookDeclaration",
+        "source_repository": "https://github.com/kumwe/extension-sdk",
+        "source_commit": "e8ec23f155c5836c6bd083f154a8efb6e50aec66",
+        "source_path": "src/Spi/BusinessIntegration/Domain/WebhookDeclaration.php",
+        "source_sha256": "75e0538770372cbf2625136bcef2bd7cf8f1207325babb270d0ac9602fb7fdfe",
+        "target_path": "src/WebhookDeclaration.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\OutboxStore",
+        "new_fqcn": "Kumwe\\Integration\\OutboxStore",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/OutboxStore.php",
+        "source_sha256": "4d5723c368c7ba394d8d098eceea727e94ecff5eabf0f272befb6b9c950ad9b7",
+        "target_path": "src/OutboxStore.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\InboxStore",
+        "new_fqcn": "Kumwe\\Integration\\InboxStore",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/InboxStore.php",
+        "source_sha256": "a27d8a8330a49988d584d62c3c19231dd59a2a5679295d7bd9e76a0e4b0a5c8e",
+        "target_path": "src/InboxStore.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\ProcessManagerStore",
+        "new_fqcn": "Kumwe\\Integration\\ProcessManagerStore",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/ProcessManagerStore.php",
+        "source_sha256": "ac0101b2495c9a9a396a445b612614cf0d3cd855bb0b92f2b39c8a43e3d865ea",
+        "target_path": "src/ProcessManagerStore.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\ProcessManagerHandler",
+        "new_fqcn": "Kumwe\\Integration\\ProcessManagerHandler",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/ProcessManagerHandler.php",
+        "source_sha256": "232aa9ec95d015fe4774ee1eeee614c51a800ed078aae41d3fe0154e2cfedb5e",
+        "target_path": "src/ProcessManagerHandler.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\EventContractRegistry",
+        "new_fqcn": "Kumwe\\Integration\\EventContractRegistry",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/EventContractRegistry.php",
+        "source_sha256": "2b40b39556b3e6ec473f66f08e48a17d97f925dbb71a2fdb15e4ea0c88ae6567",
+        "target_path": "src/EventContractRegistry.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\PayloadSchemaValidator",
+        "new_fqcn": "Kumwe\\Integration\\PayloadSchemaValidator",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/PayloadSchemaValidator.php",
+        "source_sha256": "578fa5417eaed6309683a39143af94bd45b874dbffda3375f68d9e5b59d9225e",
+        "target_path": "src/PayloadSchemaValidator.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\InboxDisposition",
+        "new_fqcn": "Kumwe\\Integration\\InboxDisposition",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/InboxDisposition.php",
+        "source_sha256": "ffbb872e4e811eab23dad22db7e561ef1631a11e6a7ccf9a0782cecebeb40e66",
+        "target_path": "src/InboxDisposition.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\InboxClaimResult",
+        "new_fqcn": "Kumwe\\Integration\\InboxClaimResult",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/InboxClaimResult.php",
+        "source_sha256": "3fda108582334c99e5a052316e5fcacb19a87b9fc09fb118b63ce079d883c782",
+        "target_path": "src/InboxClaimResult.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\InboxLease",
+        "new_fqcn": "Kumwe\\Integration\\InboxLease",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/InboxLease.php",
+        "source_sha256": "0c6d0fe88a488732e640562c0746cfb6d8357af6a44f15ef23454eda9a533df2",
+        "target_path": "src/InboxLease.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\OutboxLease",
+        "new_fqcn": "Kumwe\\Integration\\OutboxLease",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/OutboxLease.php",
+        "source_sha256": "d80b191b057323445af9333b05d0984d847dde397929b58af5986c151b511a0c",
+        "target_path": "src/OutboxLease.php"
+    },
+    {
+        "old_fqcn": "Kumwe\\App\\BusinessIntegration\\Application\\ProcessWorkLease",
+        "new_fqcn": "Kumwe\\Integration\\ProcessWorkLease",
+        "source_repository": "https://github.com/kumwe/app",
+        "source_commit": "24ecf956423c18933e824b43cea1bfb9127a79a9",
+        "source_path": "src/BusinessIntegration/Application/ProcessWorkLease.php",
+        "source_sha256": "c43ee61e36db7d6f51cb684f908058a8b6d6054fd3ab2d83040649781e720520",
+        "target_path": "src/ProcessWorkLease.php"
+    }
+]
