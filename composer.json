@@ -26,6 +26,7 @@
     "manifests:record": "php tools/verify.php --write",
     "check": [
       "composer validate --strict",
+      "@governance",
       "@lint",
       "@architecture",
       "@manifests",
@@ -49,7 +50,8 @@
       "bash tools/test-release-integrity.sh",
       "bash tools/test-release-on-record.sh",
       "bash tools/test-package-dependencies.sh"
-    ]
+    ],
+    "governance": "@php tools/verify-governed-manifests.php"
   },
   "archive": {
     "exclude": [
