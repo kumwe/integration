@@ -8,12 +8,13 @@ run(['composer','archive','--format=zip','--file=package','--dir='.$directory,'-
 $archive=$directory.'/package.zip';
 $metadata=$package;unset($metadata['autoload-dev'],$metadata['scripts'],$metadata['require-dev'],$metadata['archive']);
 $metadata['version']='dev-candidate';$metadata['dist']=['type'=>'zip','url'=>'file://'.$archive];
-$requires=[$package['name']=>'dev-candidate'];foreach(($config['require']??[]) as $name=>$version)if(isset($package['require'][$name]))$requires[$name]=$version;
+$requires=[$package['name']=>'dev-candidate','laminas/laminas-servicemanager'=>'^4.0'];foreach(($config['require']??[]) as $name=>$version)if(isset($package['require'][$name]))$requires[$name]=$version;
 $repositories=[['type'=>'package','package'=>$metadata]];
 foreach(($config['repositories']??[]) as $repository){if(isset($repository['options']['versions'][$package['name']]))continue;$repositories[]=$repository;}
 $consumer=['name'=>'kumwe-test/archive-consumer','require'=>$requires,'repositories'=>$repositories,'minimum-stability'=>$config?'dev':'stable','prefer-stable'=>true,'config'=>['allow-plugins'=>false]];
 file_put_contents($directory.'/composer.json',json_encode($consumer,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES|JSON_THROW_ON_ERROR));
 run(['composer','update','--no-dev','--no-scripts','--no-plugins','--prefer-dist','--classmap-authoritative','--no-interaction'],$directory);
+run(['composer','audit','--abandoned=fail'],$directory);
 $loader = require $directory.'/vendor/autoload.php';
 if (!$loader->isClassMapAuthoritative()) throw new RuntimeException('Consumer autoloader must be authoritative.');
 foreach (array_keys($loader->getClassMap()) as $class) if (str_starts_with($class, 'Kumwe\\App\\') || str_starts_with($class, 'Kumwe\\Extension\\')) throw new RuntimeException('Host dependency entered the archive consumer.');

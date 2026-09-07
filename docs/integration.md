@@ -1,0 +1,11 @@
+# Standalone use and host composition
+
+Install with Composer and use Kumwe\\Integration types directly. PHP 8.5 plus mbstring and the declared dependencies are required. `php examples/consumer.php` declares a consumer and validates a bounded payload.
+
+Include `Kumwe\\Integration\\ConfigProvider::class` explicitly in the Laminas ConfigAggregator provider list. Register the aggregated `dependencies` with ServiceManager and the complete configuration under `config`. The host supplies `Kumwe\\CanonicalJson\\CanonicalEncoder`; the package never selects or implements a fallback encoder.
+
+EventContractRegistry is constructed by Container\\EventContractRegistryFactory and shared within the host container. Configuration lives under `kumwe.integration`: `schemas` is a list of EventSchemaDefinition instances and `consumers` is a list of EventConsumerDefinition instances; both default to empty. Invalid options, mistyped declarations, wrong encoder services, collisions, missing schema revisions or insufficient sensitivity ceilings fail before publishing a catalog. Missing container services propagate PSR errors.
+
+Supply the host's already admitted definitions; the factory performs no extension discovery or authorization. Call `replace()` only under the host's generation transition authority. Event and process contexts remain operation-supplied. No factory registers storage, transaction, transport or network implementations.
+
+Run `composer check` for complete package gates. The archive consumer installs the actual package ZIP with no dev packages and authoritative autoloading, declares ServiceManager as its own composition dependency and runs the package-owned behavioral/provider suite against installed classes. App adoption follows independent release verification and removes only mapped portable classes/assertions, preserving transaction, database, generation, replay and egress integration tests.

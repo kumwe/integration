@@ -386,5 +386,23 @@
     ],
     "search_limit": "Exact fully qualified references; same-namespace short names and dynamic references require adoption review.",
     "adoption": "blocked pending immutable verified dependency releases"
+  },
+  {
+    "old_fqcn": null,
+    "new_fqcn": "Kumwe\\Integration\\ConfigProvider",
+    "repository": "app",
+    "explicit_import_consumers": [
+      "src/Kernel/ContainerFactory.php"
+    ],
+    "adoption": "optional explicit provider registration after independent release verification"
+  },
+  {
+    "old_fqcn": null,
+    "new_fqcn": "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
+    "repository": "app",
+    "explicit_import_consumers": [
+      "src/Kernel/ContainerFactory.php"
+    ],
+    "adoption": "optional explicit provider registration after independent release verification"
   }
 ]
