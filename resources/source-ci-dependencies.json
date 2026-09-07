@@ -1,10 +1,6 @@
 {
-  "kumwe/canonical-json": {
-    "version": "dev-agent/canonical-encoder-port-v2",
-    "ref": "022218b364625f85307f0d9585a3d48404c0d437"
-  },
   "kumwe/automation": {
-    "version": "dev-main",
-    "ref": "d8f62b8b687308c403b085012ff624faa6cbca5d"
+    "version": "dev-fix/stable-dependencies-and-release",
+    "ref": "b87a3244b3f7aa1723828fb8845a6ade0d2549fc"
   }
 }

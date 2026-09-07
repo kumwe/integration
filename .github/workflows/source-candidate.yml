@@ -21,18 +21,11 @@ jobs:
         with:
           path: package
           persist-credentials: false
-      - name: Check out canonical-json candidate
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          repository: kumwe/canonical-json
-          ref: 022218b364625f85307f0d9585a3d48404c0d437
-          path: dependencies/canonical-json
-          persist-credentials: false
       - name: Check out automation candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: kumwe/automation
-          ref: d8f62b8b687308c403b085012ff624faa6cbca5d
+          ref: b87a3244b3f7aa1723828fb8845a6ade0d2549fc
           path: dependencies/automation
           persist-credentials: false
       - name: Set up PHP
