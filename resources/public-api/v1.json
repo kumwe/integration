@@ -1,0 +1,3098 @@
+{
+    "package": "kumwe/integration",
+    "symbols": {
+        "Kumwe\\Integration\\ConsumerIdempotency": {
+            "kind": "enum",
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "constants": {
+                "AGGREGATE_VERSION": "aggregate_version",
+                "EVENT_ID": "event_id"
+            },
+            "methods": {
+                "cases": {
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "from": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                "tryFrom": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            }
+        },
+        "Kumwe\\Integration\\DomainEvent": {
+            "kind": "interface",
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Integration\\EventEnvelope"
+            ],
+            "constants": [],
+            "methods": []
+        },
+        "Kumwe\\Integration\\DomainListenerDeclaration": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "accepts": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\EventEnvelope",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "eventType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "fromManifest": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\DomainListenerDeclaration"
+                },
+                "identifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "schemaVersions": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "sensitivityCeiling": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\DomainListenerDefinition": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Integration\\IntegrationContract",
+                "Kumwe\\Contribution\\ContributionDefinition"
+            ],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "listenerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersions",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "handlerVersion",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "priority",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sensitivityCeiling",
+                            "type": "Kumwe\\Integration\\EventSensitivity",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "accepts": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sensitivity",
+                            "type": "Kumwe\\Integration\\EventSensitivity",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "eventType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "fromArray": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\DomainListenerDefinition"
+                },
+                "handlerVersion": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "identifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "priority": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "schemaVersions": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "sensitivityCeiling": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\EventConsumerDeclaration": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "accepts": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\EventEnvelope",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "eventType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "fromManifest": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\EventConsumerDeclaration"
+                },
+                "identifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "schemaVersions": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "sensitivityCeiling": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\EventConsumerDefinition": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Integration\\IntegrationContract",
+                "Kumwe\\Contribution\\ContributionDefinition"
+            ],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "consumerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersions",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "handlerVersion",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "queue",
+                            "type": "string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "aggregateOrdered",
+                            "type": "bool",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "idempotency",
+                            "type": "Kumwe\\Integration\\ConsumerIdempotency",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "maximumAttempts",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sensitivityCeiling",
+                            "type": "Kumwe\\Integration\\EventSensitivity",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "acceptsVersion": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "version",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "aggregateOrdered": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "bool"
+                },
+                "eventType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "fromArray": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\EventConsumerDefinition"
+                },
+                "handlerVersion": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "idempotency": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\ConsumerIdempotency"
+                },
+                "identifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "maximumAttempts": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "queue": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "schemaVersions": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "sensitivityCeiling": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\EventContractRegistry": {
+            "kind": "class",
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemas",
+                            "type": "iterable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "consumers",
+                            "type": "iterable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "validator",
+                            "type": "Kumwe\\Integration\\PayloadSchemaValidator",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "assertEvent": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\EventEnvelope",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "consumer": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "consumerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\EventConsumerDefinition"
+                },
+                "consumersFor": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\EventEnvelope",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "replace": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "schemas",
+                            "type": "iterable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "consumers",
+                            "type": "iterable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "schema": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\EventSchemaDefinition"
+                }
+            }
+        },
+        "Kumwe\\Integration\\EventEnvelope": {
+            "kind": "interface",
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "actorId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "aggregateId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "aggregateType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "aggregateVersion": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "causationId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "correlationId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "eventId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "eventType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "occurredAt": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "DateTimeImmutable"
+                },
+                "organizationId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "payload": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "schemaVersion": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "sensitivity": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "siteIdentifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "systemIdentity": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                }
+            }
+        },
+        "Kumwe\\Integration\\EventSchemaDefinition": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Integration\\IntegrationContract",
+                "Kumwe\\Contribution\\ContributionDefinition"
+            ],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sensitivity",
+                            "type": "Kumwe\\Integration\\EventSensitivity",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "payloadSchema",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "maximumBytes",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "eventType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "fromArray": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\EventSchemaDefinition"
+                },
+                "identifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "maximumBytes": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "payloadSchema": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "schemaVersion": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "sensitivity": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\EventSensitivity": {
+            "kind": "enum",
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "constants": {
+                "INTERNAL": "internal",
+                "PUBLIC": "public",
+                "RESTRICTED": "restricted",
+                "SECRET": "secret"
+            },
+            "methods": {
+                "allowedBy": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "ceiling",
+                            "type": "Kumwe\\Integration\\EventSensitivity",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "cases": {
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "from": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                "tryFrom": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            }
+        },
+        "Kumwe\\Integration\\InboxClaimResult": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "disposition",
+                            "type": "Kumwe\\Integration\\InboxDisposition",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "lease",
+                            "type": "?Kumwe\\Integration\\InboxLease",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            }
+        },
+        "Kumwe\\Integration\\InboxDisposition": {
+            "kind": "enum",
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "constants": {
+                "BUSY": "busy",
+                "CLAIMED": "claimed",
+                "DUPLICATE": "duplicate",
+                "POISON": "poison",
+                "REORDERED": "reordered",
+                "UNAVAILABLE": "unavailable"
+            },
+            "methods": {
+                "cases": {
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "from": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                "tryFrom": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            }
+        },
+        "Kumwe\\Integration\\InboxLease": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "consumer",
+                            "type": "Kumwe\\Integration\\EventConsumerDefinition",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\IntegrationEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "attempts",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseToken",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "runtimeGeneration",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            }
+        },
+        "Kumwe\\Integration\\InboxStore": {
+            "kind": "interface",
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "complete": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\InboxLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "fail": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\InboxLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "classification",
+                            "type": "Kumwe\\Automation\\FailureClassification",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "failure",
+                            "type": "Throwable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "retryAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "receive": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "consumer",
+                            "type": "Kumwe\\Integration\\EventConsumerDefinition",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\IntegrationEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "runtimeGeneration",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseSeconds",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\InboxClaimResult"
+                },
+                "recent": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "consumerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "renew": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\InboxLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseSeconds",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            }
+        },
+        "Kumwe\\Integration\\IntegrationContract": {
+            "kind": "interface",
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Contribution\\ContributionDefinition"
+            ],
+            "constants": [],
+            "methods": {
+                "identifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\IntegrationContractValidator": {
+            "kind": "class",
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "boolean": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "identifier": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "identifiers": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "values",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "integer": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "int"
+                },
+                "keys": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "required",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "listField": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "object": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "value",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "objectField": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "string": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "key",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "string"
+                },
+                "token": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            }
+        },
+        "Kumwe\\Integration\\IntegrationEvent": {
+            "kind": "interface",
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Integration\\EventEnvelope"
+            ],
+            "constants": [],
+            "methods": []
+        },
+        "Kumwe\\Integration\\OutboxLease": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\IntegrationEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "attempts",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "maximumAttempts",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseToken",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "runtimeGeneration",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            }
+        },
+        "Kumwe\\Integration\\OutboxStore": {
+            "kind": "interface",
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "append": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\IntegrationEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "maximumAttempts",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "availableAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "claim": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "workerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "runtimeGeneration",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseSeconds",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Integration\\OutboxLease"
+                },
+                "complete": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\OutboxLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "defer": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\OutboxLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "delaySeconds",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "fail": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\OutboxLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "classification",
+                            "type": "Kumwe\\Automation\\FailureClassification",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "failure",
+                            "type": "Throwable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "retryAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "purgeExpired": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "now",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "int"
+                },
+                "recent": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "renew": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\OutboxLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseSeconds",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "replay": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "eventId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "operatorId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "availableAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            }
+        },
+        "Kumwe\\Integration\\PayloadSchemaValidator": {
+            "kind": "class",
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "assertPayload": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "schema",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "payload",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "assertSchema": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "schema",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                }
+            }
+        },
+        "Kumwe\\Integration\\ProcessInstance": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "processType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "correlationId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "siteIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "organizationId",
+                            "type": "?string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "actorId",
+                            "type": "?string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "systemIdentity",
+                            "type": "?string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "version",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "status",
+                            "type": "Kumwe\\Integration\\ProcessStatus",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "state",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "createdAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "updatedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "cancellationBy",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "cancellationNote",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "actorId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "cancel": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "operatorId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "note",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "updatedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\ProcessInstance"
+                },
+                "cancellationBy": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "cancellationNote": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "correlationId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "createdAt": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "DateTimeImmutable"
+                },
+                "id": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "organizationId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "processType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "siteIdentifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "state": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "status": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\ProcessStatus"
+                },
+                "systemIdentity": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "transition": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "state",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "status",
+                            "type": "Kumwe\\Integration\\ProcessStatus",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "updatedAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\ProcessInstance"
+                },
+                "updatedAt": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "DateTimeImmutable"
+                },
+                "version": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                }
+            }
+        },
+        "Kumwe\\Integration\\ProcessManagerHandler": {
+            "kind": "interface",
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "apply": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "process",
+                            "type": "Kumwe\\Integration\\ProcessInstance",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\IntegrationEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\ProcessTransition"
+                },
+                "correlationId": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\IntegrationEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "string"
+                },
+                "processType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "start": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\IntegrationEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\ProcessTransition"
+                }
+            }
+        },
+        "Kumwe\\Integration\\ProcessManagerStore": {
+            "kind": "interface",
+            "final": false,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "claimWork": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "workerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "runtimeGeneration",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseSeconds",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Integration\\ProcessWorkLease"
+                },
+                "completeWork": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\ProcessWorkLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "create": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "process",
+                            "type": "Kumwe\\Integration\\ProcessInstance",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "work",
+                            "type": "iterable",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "failWork": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\ProcessWorkLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "classification",
+                            "type": "Kumwe\\Automation\\FailureClassification",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "failure",
+                            "type": "Throwable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "retryAt",
+                            "type": "?DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "findByCorrelation": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "processType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "siteIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "correlationId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Integration\\ProcessInstance"
+                },
+                "load": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "processId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?Kumwe\\Integration\\ProcessInstance"
+                },
+                "recent": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "renewWork": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "lease",
+                            "type": "Kumwe\\Integration\\ProcessWorkLease",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseSeconds",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "save": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "process",
+                            "type": "Kumwe\\Integration\\ProcessInstance",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "expectedVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "work",
+                            "type": "iterable",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "void"
+                },
+                "work": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "processId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "limit",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\ProcessStatus": {
+            "kind": "enum",
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "constants": {
+                "CANCELLED": "cancelled",
+                "COMPLETED": "completed",
+                "FAILED": "failed",
+                "RUNNING": "running"
+            },
+            "methods": {
+                "cases": {
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "from": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                "tryFrom": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            }
+        },
+        "Kumwe\\Integration\\ProcessTransition": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "state",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "status",
+                            "type": "Kumwe\\Integration\\ProcessStatus",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "work",
+                            "type": "iterable",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "state": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "status": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\ProcessStatus"
+                },
+                "work": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\ProcessWorkItem": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "kind",
+                            "type": "Kumwe\\Integration\\ProcessWorkKind",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "name",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "payload",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "dueAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "maximumAttempts",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "dueAt": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "DateTimeImmutable"
+                },
+                "id": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "kind": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\ProcessWorkKind"
+                },
+                "maximumAttempts": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "name": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "payload": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\ProcessWorkKind": {
+            "kind": "enum",
+            "final": true,
+            "readonly": false,
+            "parent": null,
+            "interfaces": [
+                "UnitEnum",
+                "BackedEnum"
+            ],
+            "constants": {
+                "COMMAND": "command",
+                "COMPENSATION": "compensation",
+                "TIMER": "timer"
+            },
+            "methods": {
+                "cases": {
+                    "static": true,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "from": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                "tryFrom": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "value",
+                            "type": "string|int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "?static"
+                }
+            }
+        },
+        "Kumwe\\Integration\\ProcessWorkLease": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "processId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "processVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "siteIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "organizationId",
+                            "type": "?string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "work",
+                            "type": "Kumwe\\Integration\\ProcessWorkItem",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "attempts",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "workerId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "leaseToken",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "runtimeGeneration",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "correlationId",
+                            "type": "?string",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                }
+            }
+        },
+        "Kumwe\\Integration\\RecordedDomainEvent": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": "Kumwe\\Integration\\RecordedEventEnvelope",
+            "interfaces": [
+                "Kumwe\\Integration\\EventEnvelope",
+                "Kumwe\\Integration\\DomainEvent"
+            ],
+            "constants": [],
+            "methods": []
+        },
+        "Kumwe\\Integration\\RecordedEventEnvelope": {
+            "kind": "class",
+            "final": false,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Integration\\EventEnvelope"
+            ],
+            "constants": {
+                "MAX_PAYLOAD_BYTES": 65536,
+                "MAX_PAYLOAD_DEPTH": 16,
+                "MAX_PAYLOAD_NODES": 2048
+            },
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "eventId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "occurredAt",
+                            "type": "DateTimeImmutable",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "actorId",
+                            "type": "?string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "systemIdentity",
+                            "type": "?string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "siteIdentifier",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "organizationId",
+                            "type": "?string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "aggregateType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "aggregateId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "aggregateVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "correlationId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "causationId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sensitivity",
+                            "type": "Kumwe\\Integration\\EventSensitivity",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "payload",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "actorId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "aggregateId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "aggregateType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "aggregateVersion": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "causationId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "correlationId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "document": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\EventEnvelope",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "array"
+                },
+                "eventId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "eventType": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "fromArray": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "static"
+                },
+                "occurredAt": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "DateTimeImmutable"
+                },
+                "organizationId": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "payload": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "schemaVersion": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "sensitivity": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "siteIdentifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "systemIdentity": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "?string"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\RecordedIntegrationEvent": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": "Kumwe\\Integration\\RecordedEventEnvelope",
+            "interfaces": [
+                "Kumwe\\Integration\\EventEnvelope",
+                "Kumwe\\Integration\\IntegrationEvent"
+            ],
+            "constants": [],
+            "methods": {
+                "fromDomain": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "canonicalJson",
+                            "type": "Kumwe\\CanonicalJson\\CanonicalEncoder",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\DomainEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\RecordedIntegrationEvent"
+                }
+            }
+        },
+        "Kumwe\\Integration\\WebhookContributionDefinition": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [
+                "Kumwe\\Integration\\IntegrationContract",
+                "Kumwe\\Contribution\\ContributionDefinition"
+            ],
+            "constants": [],
+            "methods": {
+                "__construct": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "adapterId",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "eventTypes",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersions",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "handlerVersion",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "queue",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "idempotency",
+                            "type": "Kumwe\\Integration\\ConsumerIdempotency",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "maximumAttempts",
+                            "type": "int",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "sensitivityCeiling",
+                            "type": "Kumwe\\Integration\\EventSensitivity",
+                            "optional": true,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": ""
+                },
+                "accepts": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "eventType",
+                            "type": "string",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        },
+                        {
+                            "name": "schemaVersion",
+                            "type": "int",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "eventTypes": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "fromArray": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\WebhookContributionDefinition"
+                },
+                "handlerVersion": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "idempotency": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\ConsumerIdempotency"
+                },
+                "identifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "maximumAttempts": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "int"
+                },
+                "queue": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "schemaVersions": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "sensitivityCeiling": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        },
+        "Kumwe\\Integration\\WebhookDeclaration": {
+            "kind": "class",
+            "final": true,
+            "readonly": true,
+            "parent": null,
+            "interfaces": [],
+            "constants": [],
+            "methods": {
+                "accepts": {
+                    "static": false,
+                    "parameters": [
+                        {
+                            "name": "event",
+                            "type": "Kumwe\\Integration\\IntegrationEvent",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "bool"
+                },
+                "eventTypes": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "fromManifest": {
+                    "static": true,
+                    "parameters": [
+                        {
+                            "name": "data",
+                            "type": "array",
+                            "optional": false,
+                            "variadic": false,
+                            "reference": false
+                        }
+                    ],
+                    "return": "Kumwe\\Integration\\WebhookDeclaration"
+                },
+                "identifier": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "string"
+                },
+                "schemaVersions": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                },
+                "sensitivityCeiling": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "Kumwe\\Integration\\EventSensitivity"
+                },
+                "toArray": {
+                    "static": false,
+                    "parameters": [],
+                    "return": "array"
+                }
+            }
+        }
+    }
+}

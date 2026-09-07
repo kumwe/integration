@@ -1,0 +1,43 @@
+{
+  "name": "kumwe/integration",
+  "description": "Portable integration contracts and behavior extracted from Kumwe.",
+  "type": "library",
+  "license": "Apache-2.0",
+  "require": {
+    "php": "^8.5",
+    "kumwe/canonical-json": "^0.1.1",
+    "kumwe/contribution": "^0.1",
+    "kumwe/access-context": "^0.1",
+    "kumwe/automation": "^0.1",
+    "ramsey/uuid": "^4.7",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kumwe\\Integration\\": "src/"
+    }
+  },
+  "scripts": {
+    "test": "php tests/run.php",
+    "lint": "php tools/verify.php --lint",
+    "architecture": "php tools/verify.php --architecture",
+    "manifests": "php tools/verify.php --manifests",
+    "manifests:record": "php tools/verify.php --write",
+    "check": [
+      "composer validate --strict",
+      "@lint",
+      "@architecture",
+      "@manifests",
+      "@test"
+    ],
+    "clean-consumer": "php tools/verify-clean-consumer.php"
+  },
+  "archive": {
+    "exclude": [
+      "/tests",
+      "/tools",
+      "/CHARTER.md",
+      "/.gitignore"
+    ]
+  }
+}
