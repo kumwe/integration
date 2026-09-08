@@ -9,7 +9,7 @@ target:
   artifact_identity: kumwe/integration
   canonical_namespace_or_abi: Kumwe\Integration
   branch: fix/installed-consumer-readiness
-  pull_request: https://github.com/kumwe/integration/pull/7
+  pull_request: https://github.com/kumwe/integration/pull/8
 source:
   app:
     repository: https://github.com/kumwe/app
@@ -1039,7 +1039,7 @@ blockers:
 
 The 0.2.3 successor makes the shipped example use the actual consumer Composer autoloader, preserving source-checkout execution and supporting both preloaded inclusion and an explicit CLI path. The mandatory archive gate executes both installed forms and refuses a missing supplied path. Published 0.2.2 at ff42d4d52753a3fec338b930f665c4283a9f5805 remains unchanged. Actual published Automation 0.2.2 at cef19174a9c8a7a6008fe284481a235d13eec195 is selected; no App integration or package runtime API changes are included.
 
-Refuse empty-object required-field bypasses, nonfinite or malformed values and contradictory schemas; expose explicit registry composition. [PR #7](https://github.com/kumwe/integration/pull/7) contains this successor. The changelog version describes the proposed artifact; it is not a publication observation.
+Refuse empty-object required-field bypasses, nonfinite or malformed values and contradictory schemas; expose explicit registry composition. [PR #7](https://github.com/kumwe/integration/pull/8) contains this successor. The changelog version describes the proposed artifact; it is not a publication observation.
 
 ## Public API and responsibility
 
