@@ -8,7 +8,7 @@ target:
   repository: "https://github.com/kumwe/integration"
   artifact_identity: "kumwe/integration"
   canonical_namespace_or_abi: "Kumwe\\Integration"
-  branch: "codex/extraction-readiness-20260907"
+  branch: codex/integration-readiness-20260908
   pull_request: "https://github.com/kumwe/integration/pull/5"
 source:
   app:
@@ -774,13 +774,13 @@ ownership:
   public_manifests:
     -
       path: "resources/public-api/v1.json"
-      sha256: "ab547f1c9c56e8ef499f5aff768cdc52fe38f502335a6742976a96d161daaa54"
+      sha256: "21e59a3295ccb1d1d430a363d63ad085c7d1e62fe4bedef39b6a2a188ec50040"
     -
       path: "resources/capabilities/v1.json"
-      sha256: "a9bb0134eaec8edc1910d79dce7253869551b9b623c95f474c971be49b2537b7"
+      sha256: "bf60c3d10dbd0a6391c1817a0f4ebcafe044e4993f4a9559172cced0825700cf"
     -
       path: "resources/service-map/v1.json"
-      sha256: "3dab383d96b6426d6a3b5407996aa29c87da8dff11e848a9e6ff318b461218fb"
+      sha256: "ca9442b8d0a38f420cc62a03893b130d389850b40a5d73213bc3416ae1f243e3"
   intentionally_excluded:
     - "Event contracts, schema validation and portable integration declarations are implemented and tested here. Transport, outbox persistence, commit ordering, network deadlines and final authorization remain host responsibilities."
 native_cpp: null
@@ -829,7 +829,7 @@ documentation:
   integration_or_consumer: "docs/integration.md"
   examples:
     - "examples/consumer.php"
-  changelog_record: "CHANGELOG.md / 0.2.0"
+  changelog_record: "CHANGELOG.md ## 0.2.1"
 release_expectations:
   version_policy: "Exact stable sibling package pins; preserve coherent released graphs until compatible successor releases exist."
   expected_artifact_types:
@@ -986,7 +986,7 @@ decisions:
   - "Event contracts, schema validation and portable integration declarations are implemented and tested here. Transport, outbox persistence, commit ordering, network deadlines and final authorization remain host responsibilities."
   - "Library behavior tests are package-owned. App changes, releases and external attestations are separate tasks."
 blockers:
-  - "Independent successor release verification and the final package gate remain necessary before App adoption. Integration cannot use Contribution 0.1.1 or Access Context 0.1.1 until the compatible Automation successor is actually published."
+  - "Require the final complete package gate and independent artifact verification for this coordinated successor. Automation 0.2.1, Contribution 0.1.1 and Access Context 0.1.2 form the selected tuple. The later App integration phase will replace namespaces and retain host adapters only after its own acceptance checks.
 ---
 
 # integration implementation handoff
@@ -1012,6 +1012,16 @@ The machine record lists actual source mappings, known consumer paths and concre
 Package tests own portable values, validation, service behavior, explicit construction and malformed-input regressions. The machine record identifies the source suites to split. Host persistence, transactions, authority, transport and operational integration stay in App. After verified adoption, remove duplicate library implementation assertions from App together with their legacy source.
 
 ## Next-task execution notes
+
+The selected production dependency tuple is:
+
+- kumwe/canonical-json 0.1.1
+- kumwe/contribution 0.1.1
+- kumwe/access-context 0.1.2
+- kumwe/automation 0.2.1
+
+Published dependency identities and independent archive consumers must be verified before adoption.
+The package gate enforces agreement between Composer constraints and the dependency evidence coordinates.
 
 Independent successor release verification and the final package gate remain necessary before App adoption. Integration cannot use Contribution 0.1.1 or Access Context 0.1.1 until the compatible Automation successor is actually published. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.1.0 requires Contribution 0.1.0 and Access Context 0.1.0. Publish a compatible Automation successor first, then promote Integration Automation/Contribution/Access Context pins together. The current coherent release graph remains pinned. Run final source and clean archive gates before admitting the package; then update the App dependency lock, replace namespaces, retain host adapters and remove only the inventoried portable legacy implementations.
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1
+
+- Align exact production requirements with the coordinated, validated extraction package graph.
+- Reject stale or incomplete dependency evidence coordinates in the complete package gate.
+- Refresh governed release manifests and handoff metadata while preserving package behavior and host boundaries.
+
 ## 0.2.0
 
 - Reject empty-object required-property bypasses and malformed, non-finite or unbounded schema/payload input.
