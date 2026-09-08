@@ -6,9 +6,9 @@
   "require": {
     "php": "^8.5",
     "kumwe/canonical-json": "0.1.1",
-    "kumwe/contribution": "0.1.0",
-    "kumwe/access-context": "0.1.0",
-    "kumwe/automation": "0.1.0",
+    "kumwe/contribution": "0.1.1",
+    "kumwe/access-context": "0.1.2",
+    "kumwe/automation": "0.2.1",
     "ramsey/uuid": "^4.7",
     "ext-mbstring": "*",
     "psr/container": "^2.0"
@@ -26,6 +26,7 @@
     "manifests:record": "php tools/verify.php --write",
     "check": [
       "composer validate --strict",
+      "@dependencies:check",
       "@governance",
       "@lint",
       "@architecture",
@@ -51,7 +52,11 @@
       "bash tools/test-release-on-record.sh",
       "bash tools/test-package-dependencies.sh"
     ],
-    "governance": "@php tools/verify-governed-manifests.php"
+    "governance": "@php tools/verify-governed-manifests.php",
+    "dependencies:check": [
+      "bash tools/check-dependency-readiness.sh",
+      "bash tools/test-dependency-readiness.sh"
+    ]
   },
   "archive": {
     "exclude": [

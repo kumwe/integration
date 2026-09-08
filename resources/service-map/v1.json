@@ -1,7 +1,7 @@
 {
     "schema": "kumwe-package-service-map/v1",
     "package": "kumwe/integration",
-    "release": "0.2.0",
+    "release": "0.2.1",
     "config_provider": "Kumwe\\Integration\\ConfigProvider",
     "provider_absence_reason": null,
     "factories": [
