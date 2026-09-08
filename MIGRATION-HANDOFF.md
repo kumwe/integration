@@ -9,7 +9,7 @@ target:
   artifact_identity: "kumwe/integration"
   canonical_namespace_or_abi: "Kumwe\\Integration"
   branch: codex/integration-readiness-20260908
-  pull_request: "https://github.com/kumwe/integration/pull/5"
+  pull_request: https://github.com/kumwe/integration/pull/6
 source:
   app:
     repository: "https://github.com/kumwe/app"
