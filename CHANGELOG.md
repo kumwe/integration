@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2
+
+- Correct the migration handoff YAML front matter and require full authoritative schema validation.
+- Reject malformed handoffs, invalid native requirements and incomplete canonical contracts before publication.
+- Preserve runtime behavior, the complete public API and the compatible exact dependency graph.
+
 ## 0.2.1
 
 - Align exact production requirements with the coordinated, validated extraction package graph.
