@@ -1,62 +1,62 @@
 {
-  "schema": "kumwe-package-capabilities/v1",
-  "package": "kumwe/integration",
-  "release": "0.2.2",
-  "namespace": "Kumwe\\Integration\\",
-  "responsibility": "Portable integration contracts and behavior extracted from Kumwe.",
-  "non_responsibilities": [
-    "Host trust, final authorization and active generation selection",
-    "Persistence, durable transactions, transport and worker lifecycle"
-  ],
-  "capabilities": [
-    {
-      "id": "integration.portable",
-      "title": "Portable integration contracts and behavior extracted from Kumwe.",
-      "description": "Canonical portable declarations, behavior and explicit construction; the host retains operational authority.",
-      "symbols": [
-        "Kumwe\\Integration\\ConfigProvider",
-        "Kumwe\\Integration\\ConsumerIdempotency",
-        "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
-        "Kumwe\\Integration\\DomainEvent",
-        "Kumwe\\Integration\\DomainListenerDeclaration",
-        "Kumwe\\Integration\\DomainListenerDefinition",
-        "Kumwe\\Integration\\EventConsumerDeclaration",
-        "Kumwe\\Integration\\EventConsumerDefinition",
-        "Kumwe\\Integration\\EventContractRegistry",
-        "Kumwe\\Integration\\EventEnvelope",
-        "Kumwe\\Integration\\EventSchemaDefinition",
-        "Kumwe\\Integration\\EventSensitivity",
-        "Kumwe\\Integration\\InboxClaimResult",
-        "Kumwe\\Integration\\InboxDisposition",
-        "Kumwe\\Integration\\InboxLease",
-        "Kumwe\\Integration\\InboxStore",
-        "Kumwe\\Integration\\IntegrationContract",
-        "Kumwe\\Integration\\IntegrationContractValidator",
-        "Kumwe\\Integration\\IntegrationEvent",
-        "Kumwe\\Integration\\OutboxLease",
-        "Kumwe\\Integration\\OutboxStore",
-        "Kumwe\\Integration\\PayloadSchemaValidator",
-        "Kumwe\\Integration\\ProcessInstance",
-        "Kumwe\\Integration\\ProcessManagerHandler",
-        "Kumwe\\Integration\\ProcessManagerStore",
-        "Kumwe\\Integration\\ProcessStatus",
-        "Kumwe\\Integration\\ProcessTransition",
-        "Kumwe\\Integration\\ProcessWorkItem",
-        "Kumwe\\Integration\\ProcessWorkKind",
-        "Kumwe\\Integration\\ProcessWorkLease",
-        "Kumwe\\Integration\\RecordedDomainEvent",
-        "Kumwe\\Integration\\RecordedEventEnvelope",
-        "Kumwe\\Integration\\RecordedIntegrationEvent",
-        "Kumwe\\Integration\\WebhookContributionDefinition",
-        "Kumwe\\Integration\\WebhookDeclaration"
-      ],
-      "documentation": [
-        "docs/public-api.md",
-        "docs/architecture.md",
-        "docs/integration.md"
-      ]
-    }
-  ],
-  "native_requirements": null,
-  "deprecations": []
+    "schema": "kumwe-package-capabilities/v1",
+    "package": "kumwe/integration",
+    "release": "0.2.2",
+    "namespace": "Kumwe\\Integration\\",
+    "responsibility": "Portable integration contracts and behavior extracted from Kumwe.",
+    "non_responsibilities": [
+        "Host trust, final authorization and active generation selection",
+        "Persistence, durable transactions, transport and worker lifecycle"
+    ],
+    "capabilities": [
+        {
+            "id": "integration.portable",
+            "title": "Portable integration contracts and behavior extracted from Kumwe.",
+            "description": "Canonical portable declarations, behavior and explicit construction; the host retains operational authority.",
+            "symbols": [
+                "Kumwe\\Integration\\ConfigProvider",
+                "Kumwe\\Integration\\ConsumerIdempotency",
+                "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
+                "Kumwe\\Integration\\DomainEvent",
+                "Kumwe\\Integration\\DomainListenerDeclaration",
+                "Kumwe\\Integration\\DomainListenerDefinition",
+                "Kumwe\\Integration\\EventConsumerDeclaration",
+                "Kumwe\\Integration\\EventConsumerDefinition",
+                "Kumwe\\Integration\\EventContractRegistry",
+                "Kumwe\\Integration\\EventEnvelope",
+                "Kumwe\\Integration\\EventSchemaDefinition",
+                "Kumwe\\Integration\\EventSensitivity",
+                "Kumwe\\Integration\\InboxClaimResult",
+                "Kumwe\\Integration\\InboxDisposition",
+                "Kumwe\\Integration\\InboxLease",
+                "Kumwe\\Integration\\InboxStore",
+                "Kumwe\\Integration\\IntegrationContract",
+                "Kumwe\\Integration\\IntegrationContractValidator",
+                "Kumwe\\Integration\\IntegrationEvent",
+                "Kumwe\\Integration\\OutboxLease",
+                "Kumwe\\Integration\\OutboxStore",
+                "Kumwe\\Integration\\PayloadSchemaValidator",
+                "Kumwe\\Integration\\ProcessInstance",
+                "Kumwe\\Integration\\ProcessManagerHandler",
+                "Kumwe\\Integration\\ProcessManagerStore",
+                "Kumwe\\Integration\\ProcessStatus",
+                "Kumwe\\Integration\\ProcessTransition",
+                "Kumwe\\Integration\\ProcessWorkItem",
+                "Kumwe\\Integration\\ProcessWorkKind",
+                "Kumwe\\Integration\\ProcessWorkLease",
+                "Kumwe\\Integration\\RecordedDomainEvent",
+                "Kumwe\\Integration\\RecordedEventEnvelope",
+                "Kumwe\\Integration\\RecordedIntegrationEvent",
+                "Kumwe\\Integration\\WebhookContributionDefinition",
+                "Kumwe\\Integration\\WebhookDeclaration"
+            ],
+            "documentation": [
+                "docs/public-api.md",
+                "docs/architecture.md",
+                "docs/integration.md"
+            ]
+        }
+    ],
+    "native_requirements": null,
+    "deprecations": []
 }

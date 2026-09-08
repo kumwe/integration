@@ -1,28 +1,28 @@
 {
-  "schema": "kumwe-package-service-map/v1",
-  "package": "kumwe/integration",
-  "release": "0.2.2",
-  "config_provider": "Kumwe\\Integration\\ConfigProvider",
-  "provider_absence_reason": null,
-  "factories": [
-    {
-      "service": "Kumwe\\Integration\\EventContractRegistry",
-      "factory": "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
-      "lifetime": "shared"
-    }
-  ],
-  "aliases": {},
-  "delegators": [],
-  "configuration_keys": [
-    {
-      "key": "kumwe.integration.schemas",
-      "default": [],
-      "description": "Explicit integration configuration; see docs/integration.md."
-    },
-    {
-      "key": "kumwe.integration.consumers",
-      "default": [],
-      "description": "Explicit integration configuration; see docs/integration.md."
-    }
-  ]
+    "schema": "kumwe-package-service-map/v1",
+    "package": "kumwe/integration",
+    "release": "0.2.2",
+    "config_provider": "Kumwe\\Integration\\ConfigProvider",
+    "provider_absence_reason": null,
+    "factories": [
+        {
+            "service": "Kumwe\\Integration\\EventContractRegistry",
+            "factory": "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
+            "lifetime": "shared"
+        }
+    ],
+    "aliases": {},
+    "delegators": [],
+    "configuration_keys": [
+        {
+            "key": "kumwe.integration.schemas",
+            "default": [],
+            "description": "Explicit integration configuration; see docs/integration.md."
+        },
+        {
+            "key": "kumwe.integration.consumers",
+            "default": [],
+            "description": "Explicit integration configuration; see docs/integration.md."
+        }
+    ]
 }
