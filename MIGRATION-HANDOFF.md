@@ -807,11 +807,11 @@ ownership:
   next_consumer: kumwe/app
   public_manifests:
   - path: resources/public-api/v1.json
-    sha256: a51347696b6ad7fa2904d0ec7f81f77292852f025f438feb0d13e01e6cd1230f
+    sha256: cef4e66101b7b40bb2ca343d26812eeb09897501430bff97b5b146b8b6ae9a22
   - path: resources/capabilities/v1.json
-    sha256: bd1d8cfdb1237718700dbd8e4689a85fb4e814b4063d5a951ec0bd2927f58bf1
+    sha256: ed61e6fa318d1cc2991021185dce3ce4573e83c9f93710e2316008c7673b7032
   - path: resources/service-map/v1.json
-    sha256: 99e77035360b2af74b24635adc8b79febef92c9dc4c0cd2a2935cf667d0ee82d
+    sha256: af4a9bbc8ac613593ecc847583e955bd096a99a0deb0fb2f3cd3e5b23757443f
   intentionally_excluded:
   - Event contracts, schema validation and portable integration declarations are implemented and tested here. Transport,
     outbox persistence, commit ordering, network deadlines and final authorization remain host responsibilities.
