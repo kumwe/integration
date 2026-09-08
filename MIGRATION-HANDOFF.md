@@ -8,7 +8,7 @@ target:
   repository: https://github.com/kumwe/integration
   artifact_identity: kumwe/integration
   canonical_namespace_or_abi: Kumwe\Integration
-  branch: codex/complete-handoff-schema
+  branch: fix/installed-consumer-readiness
   pull_request: https://github.com/kumwe/integration/pull/7
 source:
   app:
@@ -45,9 +45,9 @@ source:
   examined_dependencies:
   - php ^8.5
   - kumwe/canonical-json 0.1.1
-  - kumwe/contribution 0.1.0
-  - kumwe/access-context 0.1.0
-  - kumwe/automation 0.1.0
+  - kumwe/contribution 0.1.1
+  - kumwe/access-context 0.1.2
+  - kumwe/automation 0.2.2
   - ramsey/uuid ^4.7
   - ext-mbstring *
   - psr/container ^2.0
@@ -807,11 +807,11 @@ ownership:
   next_consumer: kumwe/app
   public_manifests:
   - path: resources/public-api/v1.json
-    sha256: cef4e66101b7b40bb2ca343d26812eeb09897501430bff97b5b146b8b6ae9a22
+    sha256: c95efa67274c4c989703db6f0f862953704ac4cdede6c515cc9cc06f20852a5c
   - path: resources/capabilities/v1.json
-    sha256: ed61e6fa318d1cc2991021185dce3ce4573e83c9f93710e2316008c7673b7032
+    sha256: dd98607038e6d72dc9a0fa5d2e1f524102f6fc20eb4fc32bfbca2f3871334cfe
   - path: resources/service-map/v1.json
-    sha256: af4a9bbc8ac613593ecc847583e955bd096a99a0deb0fb2f3cd3e5b23757443f
+    sha256: 99951ae2eadb277d96b9aa0f282634840a8e3b90a60372885a15dcb7aa5a91d2
   intentionally_excluded:
   - Event contracts, schema validation and portable integration declarations are implemented and tested here. Transport,
     outbox persistence, commit ordering, network deadlines and final authorization remain host responsibilities.
@@ -819,6 +819,7 @@ native_cpp: null
 php_extension: null
 tests:
   moved_or_added:
+  - tools/verify-clean-consumer.php
   - tests/bootstrap.php
   - tests/container.php
   - tests/run.php
@@ -862,7 +863,7 @@ documentation:
   integration_or_consumer: docs/integration.md
   examples:
   - examples/consumer.php
-  changelog_record: CHANGELOG.md / 0.2.2
+  changelog_record: CHANGELOG.md / 0.2.3
 release_expectations:
   version_policy: Exact stable sibling package pins; preserve coherent released graphs until compatible successor
     releases exist.
@@ -1029,12 +1030,14 @@ decisions:
 - Correct malformed YAML front matter and validate complete authoritative schemas without changing runtime source
   or dependency versions.
 blockers:
-- Require final complete source/archive CI and independent publication verification for0.2.2 before adoption.
+- Require final complete source/archive CI and independent publication verification for 0.2.3 before adoption.
 ---
 
 # integration implementation handoff
 
 ## Migration/implementation summary
+
+The 0.2.3 successor makes the shipped example use the actual consumer Composer autoloader, preserving source-checkout execution and supporting both preloaded inclusion and an explicit CLI path. The mandatory archive gate executes both installed forms and refuses a missing supplied path. Published 0.2.2 at ff42d4d52753a3fec338b930f665c4283a9f5805 remains unchanged. Actual published Automation 0.2.2 at cef19174a9c8a7a6008fe284481a235d13eec195 is selected; no App integration or package runtime API changes are included.
 
 Refuse empty-object required-field bypasses, nonfinite or malformed values and contradictory schemas; expose explicit registry composition. [PR #7](https://github.com/kumwe/integration/pull/7) contains this successor. The changelog version describes the proposed artifact; it is not a publication observation.
 
@@ -1044,7 +1047,7 @@ Event contracts, schema validation and portable integration declarations are imp
 
 ## Capability reuse/semantic input review
 
-The implementation consumes the exact canonical dependency contracts recorded in composer.json. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.2.1 requires Contribution 0.1.1 and Access Context 0.1.2. Those compatible releases are selected together in the current exact dependency graph.
+The implementation consumes the exact canonical dependency contracts recorded in composer.json. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.2.2 requires Contribution 0.1.1 and Access Context 0.1.2. Those compatible releases are selected together in the current exact dependency graph.
 
 ## Consumer inventory
 
@@ -1061,12 +1064,12 @@ The selected production dependency tuple is:
 - kumwe/canonical-json 0.1.1
 - kumwe/contribution 0.1.1
 - kumwe/access-context 0.1.2
-- kumwe/automation 0.2.1
+- kumwe/automation 0.2.2
 
 Published dependency identities and independent archive consumers must be verified before adoption.
 The package gate enforces agreement between Composer constraints and the dependency evidence coordinates.
 
-Independent successor release verification and the final package gate remain necessary before App adoption. Integration cannot use Contribution 0.1.1 or Access Context 0.1.1 until the compatible Automation successor is actually published. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.2.1 requires Contribution 0.1.1 and Access Context 0.1.2. Those compatible releases are selected together in the current exact dependency graph. Run final source and clean archive gates before admitting the package; then update the App dependency lock, replace namespaces, retain host adapters and remove only the inventoried portable legacy implementations.
+Independent successor release verification and the final package gate remain necessary before App adoption. Install the exact independently verified successor; run Composer resolution, archive consumer gates and affected App integration tests before namespace removal. Published Automation 0.2.2 requires Contribution 0.1.1 and Access Context 0.1.2. Those compatible releases are selected together in the current exact dependency graph. Run final source and clean archive gates before admitting the package; then update the App dependency lock, replace namespaces, retain host adapters and remove only the inventoried portable legacy implementations.
 
 ## Drift check
 

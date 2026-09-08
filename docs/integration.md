@@ -1,6 +1,6 @@
 # Standalone use and host composition
 
-Install with Composer and use Kumwe\\Integration types directly. PHP 8.5 plus mbstring and the declared dependencies are required. `php examples/consumer.php` declares a consumer and validates a bounded payload.
+Install with Composer and use Kumwe\\Integration types directly. PHP 8.5 plus mbstring and the declared dependencies are required. From a source checkout, `php examples/consumer.php` declares a consumer and validates a bounded payload. From a Composer consumer root, run `php vendor/kumwe/integration/examples/consumer.php vendor/autoload.php`; the optional first argument must be a readable Composer autoload file. Including the example after the consumer has loaded Composer is also supported.
 
 Include `Kumwe\\Integration\\ConfigProvider::class` explicitly in the Laminas ConfigAggregator provider list. Register the aggregated `dependencies` with ServiceManager and the complete configuration under `config`. The host supplies `Kumwe\\CanonicalJson\\CanonicalEncoder`; the package never selects or implements a fallback encoder.
 

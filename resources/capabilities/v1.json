@@ -1,7 +1,7 @@
 {
     "schema": "kumwe-package-capabilities/v1",
     "package": "kumwe/integration",
-    "release": "0.2.2",
+    "release": "0.2.3",
     "namespace": "Kumwe\\Integration\\",
     "responsibility": "Portable integration contracts and behavior extracted from Kumwe.",
     "non_responsibilities": [

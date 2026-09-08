@@ -22,6 +22,32 @@ $prefix=realpath($directory.'/vendor/'.$package['name'].'/src').DIRECTORY_SEPARA
 $api=json_decode(file_get_contents($root.'/resources/public-api/v1.json'),true,flags:JSON_THROW_ON_ERROR);
 foreach(array_keys($api['symbols']) as $name){$type=new ReflectionClass($name);if(!str_starts_with(realpath($type->getFileName()),$prefix))throw new RuntimeException('Consumer escaped archive: '.$name);}
 $env=getenv();$env['KUMWE_TEST_AUTOLOAD']=$directory.'/vendor/autoload.php';run([PHP_BINARY,$root.'/tests/run.php'],$directory,$env);
+$example = $directory . '/vendor/' . $package['name'] . '/examples/consumer.php';
+$autoload = $directory . '/vendor/autoload.php';
+$missing = $directory . '/missing-autoload.php';
+// Execute the original installed example in fresh processes, without a nested package vendor tree.
+$cases = [
+    'explicit host autoload' => [[PHP_BINARY, $example, $autoload], true],
+    'preloaded host autoload' => [[PHP_BINARY, '-d', 'auto_prepend_file=' . $autoload, $example], true],
+    'missing explicit autoload' => [[PHP_BINARY, $example, $missing], false],
+    'missing explicit autoload after preload' => [[PHP_BINARY, '-d', 'auto_prepend_file=' . $autoload, $example, $missing], false],
+];
+foreach ($cases as $name => [$command, $success]) {
+    $process = proc_open($command, [STDIN, ['pipe', 'w'], ['pipe', 'w']], $pipes, $directory);
+    if (!is_resource($process)) throw new RuntimeException('Could not run installed example: ' . $name);
+    $output = stream_get_contents($pipes[1]);
+    $error = stream_get_contents($pipes[2]);
+    fclose($pipes[1]);
+    fclose($pipes[2]);
+    $status = proc_close($process);
+    $expected = "acme.search\n";
+    if ($success ? ($status !== 0 || $output !== $expected || $error !== '')
+        : ($status === 0 || str_contains($output, $expected)
+            || !str_contains($output . $error, 'Composer autoload file is missing or unreadable:'))) {
+        throw new RuntimeException('Installed example bootstrap regression: ' . $name . "\n" . $output . $error);
+    }
+}
+echo "Installed example passed both host bootstrap modes and both missing-path refusals.\n";
 file_put_contents($directory.'/consumer-evidence.json',json_encode(['package'=>$package['name'],'archive_sha256'=>hash_file('sha256',$archive),'public_types'=>count($api['symbols']),'behavior_tests'=>'passed','development_dependencies'=>(bool)$config,'release_attestation'=>false],JSON_PRETTY_PRINT|JSON_THROW_ON_ERROR)."\n");
 echo 'Archive consumer passed: '.count($api['symbols']).' types; sha256='.hash_file('sha256',$archive)."\n";
 echo ($config?'Development dependency coordinates were explicitly supplied; this is not immutable release verification.':'Only declared stable dependency constraints were used.')."\n";
