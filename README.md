@@ -11,3 +11,5 @@ Run `composer install` then `composer check`. `composer clean-consumer` builds a
 The optional final ConfigProvider and Container factories support explicit Laminas/Mezzio composition. See [host composition](docs/integration.md), [architecture](docs/architecture.md), [complete public API](docs/public-api.md), and [release policy](docs/releasing.md).
 
 See [MIGRATION-HANDOFF.md](MIGRATION-HANDOFF.md) for exact source mapping, intentional signature changes, ownership boundaries and release blockers. Public signatures and neutral ports are checked against `resources/public-api/v1.json` and `resources/service-map/v1.json`.
+
+The shipped example supports source-checkout execution (`php examples/consumer.php`) and installed CLI execution from a consumer root (`php vendor/kumwe/integration/examples/consumer.php vendor/autoload.php`). A consumer may also include it after loading its own Composer autoloader; no nested vendor directory is required.

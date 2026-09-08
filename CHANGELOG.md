@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.3
+
+- Select actual published Automation 0.2.2 while keeping the compatible Contribution and Access Context pins.
+- Execute the shipped example with the consumer’s existing Composer autoloader or an explicit CLI autoload path.
+- Verify preloaded and fresh-process installed example execution and missing-path refusal in the real archive consumer.
+- Preserve public APIs, package runtime behavior and full authoritative manifest/handoff validation.
+
 ## 0.2.2
 
 - Correct the migration handoff YAML front matter and require full authoritative schema validation.

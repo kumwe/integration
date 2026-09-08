@@ -6,7 +6,13 @@ use Kumwe\Integration\ConfigProvider;
 use Kumwe\Integration\EventConsumerDefinition;
 use Kumwe\Integration\PayloadSchemaValidator;
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+$autoload = $argv[1] ?? dirname(__DIR__) . '/vendor/autoload.php';
+if (isset($argv[1]) || !class_exists(EventConsumerDefinition::class)) {
+    if (!is_file($autoload) || !is_readable($autoload)) {
+        throw new RuntimeException('Composer autoload file is missing or unreadable: ' . $autoload);
+    }
+    require_once $autoload;
+}
 
 $consumer = new EventConsumerDefinition('acme.search', 'acme.record.changed', [1], '1.0.0');
 $validator = new PayloadSchemaValidator();
