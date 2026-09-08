@@ -52,7 +52,10 @@
       "bash tools/test-release-on-record.sh",
       "bash tools/test-package-dependencies.sh"
     ],
-    "governance": "@php tools/verify-governed-manifests.php",
+    "governance": [
+      "node tools/verify-full-schemas.cjs",
+      "@php tools/verify-governed-manifests.php"
+    ],
     "dependencies:check": [
       "bash tools/check-dependency-readiness.sh",
       "bash tools/test-dependency-readiness.sh"

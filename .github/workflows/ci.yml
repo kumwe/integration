@@ -32,6 +32,8 @@ jobs:
           composer validate --strict
           composer install --no-interaction --prefer-dist
           composer audit --abandoned=fail
+      - name: Install the locked governance schema validator
+        run: npm ci --prefix tools/governance --ignore-scripts --no-fund
       - name: Run package source checks and behavior tests
         run: composer check
       - name: Verify authoritative archive consumer
