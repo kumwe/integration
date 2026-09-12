@@ -9,3 +9,9 @@ EventContractRegistry is constructed by Container\\EventContractRegistryFactory 
 Supply the host's already admitted definitions; the factory performs no extension discovery or authorization. Call `replace()` only under the host's generation transition authority. Event and process contexts remain operation-supplied. No factory registers storage, transaction, transport or network implementations.
 
 Run `composer check` for complete package gates. The archive consumer installs the actual package ZIP with no dev packages and authoritative autoloading, declares ServiceManager as its own composition dependency and runs the package-owned behavioral/provider suite against installed classes. App adoption follows independent release verification and removes only mapped portable classes/assertions, preserving transaction, database, generation, replay and egress integration tests.
+
+## Development consumers
+
+`KUMWE_TEST_AUTOLOAD` can select a separate consumer autoloader. `KUMWE_CONSUMER_CONFIG` can supply
+explicit development repositories and dependency aliases. These checks do not establish verification
+of published immutable artifacts.

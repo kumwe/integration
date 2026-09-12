@@ -302,7 +302,7 @@
         "new_fqcn": "Kumwe\\Integration\\ConfigProvider",
         "source_repository": "https://github.com/kumwe/integration",
         "target_path": "src/ConfigProvider.php",
-        "responsibility": "Portable package composition added during readiness completion."
+        "responsibility": "Explicit portable package composition."
     },
     {
         "origin": "package",
@@ -310,6 +310,6 @@
         "new_fqcn": "Kumwe\\Integration\\Container\\EventContractRegistryFactory",
         "source_repository": "https://github.com/kumwe/integration",
         "target_path": "src/Container/EventContractRegistryFactory.php",
-        "responsibility": "Portable package composition added during readiness completion."
+        "responsibility": "Explicit portable package composition."
     }
 ]

@@ -1,6 +1,6 @@
 {
   "name": "kumwe/integration",
-  "description": "Portable integration contracts and behavior extracted from Kumwe.",
+  "description": "Portable event catalogs, bounded payload validation, process state and neutral integration ports.",
   "type": "library",
   "license": "Apache-2.0",
   "require": {

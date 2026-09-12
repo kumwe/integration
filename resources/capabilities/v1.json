@@ -3,7 +3,7 @@
     "package": "kumwe/integration",
     "release": "0.2.3",
     "namespace": "Kumwe\\Integration\\",
-    "responsibility": "Portable integration contracts and behavior extracted from Kumwe.",
+    "responsibility": "Portable event catalogs, bounded payload validation, process state and neutral integration ports.",
     "non_responsibilities": [
         "Host trust, final authorization and active generation selection",
         "Persistence, durable transactions, transport and worker lifecycle"
@@ -11,7 +11,7 @@
     "capabilities": [
         {
             "id": "integration.portable",
-            "title": "Portable integration contracts and behavior extracted from Kumwe.",
+            "title": "Portable event catalogs, bounded payload validation, process state and neutral integration ports.",
             "description": "Canonical portable declarations, behavior and explicit construction; the host retains operational authority.",
             "symbols": [
                 "Kumwe\\Integration\\ConfigProvider",
