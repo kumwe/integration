@@ -4,7 +4,7 @@ const Ajv = require('./governance/node_modules/ajv/dist/2020').default;
 const YAML = require('./governance/node_modules/yaml');
 const root = path.resolve(__dirname, '..');
 const ajv = new Ajv({strict: false, allErrors: true});
-const names = ['public-api', 'capabilities', 'service-map', 'handoff'];
+const names = ['public-api', 'capabilities', 'service-map', 'release-record'];
 const validators = {};
 const documents = {};
 
@@ -15,10 +15,10 @@ function frontMatter(text) {
 }
 
 for (const name of names) {
-    const schema = name === 'handoff' ? 'migration-handoff.v2' : `package-${name}.v1`;
+    const schema = name === 'release-record' ? 'package-release-record.v1' : `package-${name}.v1`;
     validators[name] = ajv.compile(JSON.parse(fs.readFileSync(path.join(__dirname, 'schemas', `${schema}.schema.json`))));
-    documents[name] = name === 'handoff'
-        ? frontMatter(fs.readFileSync(path.join(root, 'MIGRATION-HANDOFF.md'), 'utf8'))
+    documents[name] = name === 'release-record'
+        ? frontMatter(fs.readFileSync(path.join(root, 'docs/release-record.md'), 'utf8'))
         : JSON.parse(fs.readFileSync(path.join(root, 'resources', name, 'v1.json')));
     if (!validators[name](documents[name])) {
         throw new Error(`${name}: ${ajv.errorsText(validators[name].errors, {separator: '; '})}`);
@@ -41,6 +41,7 @@ mustRefuse('duplicate YAML keys', () => frontMatter('---\nschema: one\nschema: t
 mustRefuse('invalid native requirement array', () => invalid('capabilities', x => { x.native_requirements = []; }));
 mustRefuse('missing canonical API owner', () => invalid('public-api', x => { delete x.package; }));
 mustRefuse('unknown service-map field', () => invalid('service-map', x => { x.unknown = true; }));
-mustRefuse('abbreviated source commit', () => invalid('handoff', x => { x.source.app.baseline_commit = 'abcdef'; }));
-mustRefuse('invalid handoff replacement value', () => invalid('handoff', x => { x.next_task.namespace_or_api_replacements = [{}]; }));
+mustRefuse('abbreviated source commit', () => invalid('release-record', x => { x.source.app.baseline_commit = 'abcdef'; }));
+mustRefuse('invalid consumer replacement value', () => invalid('release-record', x => { x.consumer_contract.namespace_or_api_replacements = [{}]; }));
+mustRefuse('obsolete workflow state', () => invalid('release-record', x => { x.state = 'draft_pr_open'; }));
 console.log(`All four complete authoritative schemas and ${refusals} refusal regressions passed.`);

@@ -1,0 +1,1081 @@
+---
+schema: kumwe-package-release-record/v1
+artifact_kind: framework_php
+migration_id: KUMWE-MIG-2026-027
+change_set: KUMWE-CS-2026-035
+target:
+  repository: https://github.com/kumwe/integration
+  artifact_identity: kumwe/integration
+  canonical_namespace_or_abi: Kumwe\Integration
+source:
+  app:
+    repository: https://github.com/kumwe/app
+    baseline_commit: 24ecf956423c18933e824b43cea1bfb9127a79a9
+    examined_paths:
+      - src/BusinessIntegration/Application/EventContractRegistry.php
+      - src/BusinessIntegration/Application/InboxClaimResult.php
+      - src/BusinessIntegration/Application/InboxDisposition.php
+      - src/BusinessIntegration/Application/InboxLease.php
+      - src/BusinessIntegration/Application/InboxStore.php
+      - src/BusinessIntegration/Application/OutboxLease.php
+      - src/BusinessIntegration/Application/OutboxStore.php
+      - src/BusinessIntegration/Application/PayloadSchemaValidator.php
+      - src/BusinessIntegration/Application/ProcessManagerHandler.php
+      - src/BusinessIntegration/Application/ProcessManagerStore.php
+      - src/BusinessIntegration/Application/ProcessWorkLease.php
+      - src/BusinessIntegration/Domain/EventSchemaDefinition.php
+      - src/BusinessIntegration/Domain/ProcessInstance.php
+      - src/BusinessIntegration/Domain/ProcessStatus.php
+      - src/BusinessIntegration/Domain/ProcessTransition.php
+      - src/BusinessIntegration/Domain/ProcessWorkItem.php
+      - src/BusinessIntegration/Domain/ProcessWorkKind.php
+      - src/BusinessIntegration/Domain/RecordedDomainEvent.php
+      - src/BusinessIntegration/Domain/RecordedEventEnvelope.php
+      - src/BusinessIntegration/Domain/RecordedIntegrationEvent.php
+      - composer.json
+      - docs/architecture/capability-index.md
+    old_namespace_roots:
+      - Kumwe\App\BusinessIntegration\Application\
+      - Kumwe\App\BusinessIntegration\Domain\
+    capability_index_sha256: null
+  semantic_inputs: []
+  examined_dependencies:
+    - php ^8.5
+    - kumwe/canonical-json 0.1.1
+    - kumwe/contribution 0.1.1
+    - kumwe/access-context 0.1.2
+    - kumwe/automation 0.2.2
+    - ramsey/uuid ^4.7
+    - ext-mbstring *
+    - psr/container ^2.0
+framework_php:
+  composer_package: kumwe/integration
+  canonical_namespace: Kumwe\Integration
+  public_api_manifest: resources/public-api/v1.json
+  capability_manifest: resources/capabilities/v1.json
+  service_map: resources/service-map/v1.json
+  extracted_symbols:
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\EventSchemaDefinition
+      new_fqcn: Kumwe\Integration\EventSchemaDefinition
+      source_path: src/BusinessIntegration/Domain/EventSchemaDefinition.php
+      target_path: src/EventSchemaDefinition.php
+      kind: class
+      public_methods:
+        - __construct
+        - eventType
+        - fromArray
+        - identifier
+        - maximumBytes
+        - payloadSchema
+        - schemaVersion
+        - sensitivity
+        - toArray
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\ProcessInstance
+      new_fqcn: Kumwe\Integration\ProcessInstance
+      source_path: src/BusinessIntegration/Domain/ProcessInstance.php
+      target_path: src/ProcessInstance.php
+      kind: class
+      public_methods:
+        - __construct
+        - actorId
+        - cancel
+        - cancellationBy
+        - cancellationNote
+        - correlationId
+        - createdAt
+        - id
+        - organizationId
+        - processType
+        - siteIdentifier
+        - state
+        - status
+        - systemIdentity
+        - transition
+        - updatedAt
+        - version
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\ProcessStatus
+      new_fqcn: Kumwe\Integration\ProcessStatus
+      source_path: src/BusinessIntegration/Domain/ProcessStatus.php
+      target_path: src/ProcessStatus.php
+      kind: enum
+      public_methods:
+        - cases
+        - from
+        - tryFrom
+      public_properties:
+        - name
+        - value
+      public_constants:
+        - CANCELLED
+        - COMPLETED
+        - FAILED
+        - RUNNING
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\ProcessTransition
+      new_fqcn: Kumwe\Integration\ProcessTransition
+      source_path: src/BusinessIntegration/Domain/ProcessTransition.php
+      target_path: src/ProcessTransition.php
+      kind: class
+      public_methods:
+        - __construct
+        - state
+        - status
+        - work
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\ProcessWorkItem
+      new_fqcn: Kumwe\Integration\ProcessWorkItem
+      source_path: src/BusinessIntegration/Domain/ProcessWorkItem.php
+      target_path: src/ProcessWorkItem.php
+      kind: class
+      public_methods:
+        - __construct
+        - dueAt
+        - id
+        - kind
+        - maximumAttempts
+        - name
+        - payload
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\ProcessWorkKind
+      new_fqcn: Kumwe\Integration\ProcessWorkKind
+      source_path: src/BusinessIntegration/Domain/ProcessWorkKind.php
+      target_path: src/ProcessWorkKind.php
+      kind: enum
+      public_methods:
+        - cases
+        - from
+        - tryFrom
+      public_properties:
+        - name
+        - value
+      public_constants:
+        - COMMAND
+        - COMPENSATION
+        - TIMER
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\RecordedDomainEvent
+      new_fqcn: Kumwe\Integration\RecordedDomainEvent
+      source_path: src/BusinessIntegration/Domain/RecordedDomainEvent.php
+      target_path: src/RecordedDomainEvent.php
+      kind: class
+      public_methods: []
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\RecordedEventEnvelope
+      new_fqcn: Kumwe\Integration\RecordedEventEnvelope
+      source_path: src/BusinessIntegration/Domain/RecordedEventEnvelope.php
+      target_path: src/RecordedEventEnvelope.php
+      kind: class
+      public_methods:
+        - __construct
+        - actorId
+        - aggregateId
+        - aggregateType
+        - aggregateVersion
+        - causationId
+        - correlationId
+        - document
+        - eventId
+        - eventType
+        - fromArray
+        - occurredAt
+        - organizationId
+        - payload
+        - schemaVersion
+        - sensitivity
+        - siteIdentifier
+        - systemIdentity
+        - toArray
+      public_properties: []
+      public_constants:
+        - MAX_PAYLOAD_BYTES
+        - MAX_PAYLOAD_DEPTH
+        - MAX_PAYLOAD_NODES
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Domain\RecordedIntegrationEvent
+      new_fqcn: Kumwe\Integration\RecordedIntegrationEvent
+      source_path: src/BusinessIntegration/Domain/RecordedIntegrationEvent.php
+      target_path: src/RecordedIntegrationEvent.php
+      kind: class
+      public_methods:
+        - fromDomain
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\ConsumerIdempotency
+      new_fqcn: Kumwe\Integration\ConsumerIdempotency
+      source_path: src/Spi/BusinessIntegration/Domain/ConsumerIdempotency.php
+      target_path: src/ConsumerIdempotency.php
+      kind: enum
+      public_methods:
+        - cases
+        - from
+        - tryFrom
+      public_properties:
+        - name
+        - value
+      public_constants:
+        - AGGREGATE_VERSION
+        - EVENT_ID
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\DomainEvent
+      new_fqcn: Kumwe\Integration\DomainEvent
+      source_path: src/Spi/BusinessIntegration/Domain/DomainEvent.php
+      target_path: src/DomainEvent.php
+      kind: interface
+      public_methods: []
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\DomainListenerDeclaration
+      new_fqcn: Kumwe\Integration\DomainListenerDeclaration
+      source_path: src/Spi/BusinessIntegration/Domain/DomainListenerDeclaration.php
+      target_path: src/DomainListenerDeclaration.php
+      kind: class
+      public_methods:
+        - accepts
+        - eventType
+        - fromManifest
+        - identifier
+        - schemaVersions
+        - sensitivityCeiling
+        - toArray
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\DomainListenerDefinition
+      new_fqcn: Kumwe\Integration\DomainListenerDefinition
+      source_path: src/Spi/BusinessIntegration/Domain/DomainListenerDefinition.php
+      target_path: src/DomainListenerDefinition.php
+      kind: class
+      public_methods:
+        - __construct
+        - accepts
+        - eventType
+        - fromArray
+        - handlerVersion
+        - identifier
+        - priority
+        - schemaVersions
+        - sensitivityCeiling
+        - toArray
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\EventConsumerDeclaration
+      new_fqcn: Kumwe\Integration\EventConsumerDeclaration
+      source_path: src/Spi/BusinessIntegration/Domain/EventConsumerDeclaration.php
+      target_path: src/EventConsumerDeclaration.php
+      kind: class
+      public_methods:
+        - accepts
+        - eventType
+        - fromManifest
+        - identifier
+        - schemaVersions
+        - sensitivityCeiling
+        - toArray
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\EventConsumerDefinition
+      new_fqcn: Kumwe\Integration\EventConsumerDefinition
+      source_path: src/Spi/BusinessIntegration/Domain/EventConsumerDefinition.php
+      target_path: src/EventConsumerDefinition.php
+      kind: class
+      public_methods:
+        - __construct
+        - acceptsVersion
+        - aggregateOrdered
+        - eventType
+        - fromArray
+        - handlerVersion
+        - idempotency
+        - identifier
+        - maximumAttempts
+        - queue
+        - schemaVersions
+        - sensitivityCeiling
+        - toArray
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\EventEnvelope
+      new_fqcn: Kumwe\Integration\EventEnvelope
+      source_path: src/Spi/BusinessIntegration/Domain/EventEnvelope.php
+      target_path: src/EventEnvelope.php
+      kind: interface
+      public_methods:
+        - actorId
+        - aggregateId
+        - aggregateType
+        - aggregateVersion
+        - causationId
+        - correlationId
+        - eventId
+        - eventType
+        - occurredAt
+        - organizationId
+        - payload
+        - schemaVersion
+        - sensitivity
+        - siteIdentifier
+        - systemIdentity
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\EventSensitivity
+      new_fqcn: Kumwe\Integration\EventSensitivity
+      source_path: src/Spi/BusinessIntegration/Domain/EventSensitivity.php
+      target_path: src/EventSensitivity.php
+      kind: enum
+      public_methods:
+        - allowedBy
+        - cases
+        - from
+        - tryFrom
+      public_properties:
+        - name
+        - value
+      public_constants:
+        - INTERNAL
+        - PUBLIC
+        - RESTRICTED
+        - SECRET
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\IntegrationContract
+      new_fqcn: Kumwe\Integration\IntegrationContract
+      source_path: src/Spi/BusinessIntegration/Domain/IntegrationContract.php
+      target_path: src/IntegrationContract.php
+      kind: interface
+      public_methods:
+        - identifier
+        - toArray
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\IntegrationContractValidator
+      new_fqcn: Kumwe\Integration\IntegrationContractValidator
+      source_path: src/Spi/BusinessIntegration/Domain/IntegrationContractValidator.php
+      target_path: src/IntegrationContractValidator.php
+      kind: class
+      public_methods:
+        - boolean
+        - identifier
+        - identifiers
+        - integer
+        - keys
+        - listField
+        - object
+        - objectField
+        - string
+        - token
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\IntegrationEvent
+      new_fqcn: Kumwe\Integration\IntegrationEvent
+      source_path: src/Spi/BusinessIntegration/Domain/IntegrationEvent.php
+      target_path: src/IntegrationEvent.php
+      kind: interface
+      public_methods: []
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\WebhookContributionDefinition
+      new_fqcn: Kumwe\Integration\WebhookContributionDefinition
+      source_path: src/Spi/BusinessIntegration/Domain/WebhookContributionDefinition.php
+      target_path: src/WebhookContributionDefinition.php
+      kind: class
+      public_methods:
+        - __construct
+        - accepts
+        - eventTypes
+        - fromArray
+        - handlerVersion
+        - idempotency
+        - identifier
+        - maximumAttempts
+        - queue
+        - schemaVersions
+        - sensitivityCeiling
+        - toArray
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\Extension\Spi\BusinessIntegration\Domain\WebhookDeclaration
+      new_fqcn: Kumwe\Integration\WebhookDeclaration
+      source_path: src/Spi/BusinessIntegration/Domain/WebhookDeclaration.php
+      target_path: src/WebhookDeclaration.php
+      kind: class
+      public_methods:
+        - accepts
+        - eventTypes
+        - fromManifest
+        - identifier
+        - schemaVersions
+        - sensitivityCeiling
+        - toArray
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\OutboxStore
+      new_fqcn: Kumwe\Integration\OutboxStore
+      source_path: src/BusinessIntegration/Application/OutboxStore.php
+      target_path: src/OutboxStore.php
+      kind: interface
+      public_methods:
+        - append
+        - claim
+        - complete
+        - defer
+        - fail
+        - purgeExpired
+        - recent
+        - renew
+        - replay
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\InboxStore
+      new_fqcn: Kumwe\Integration\InboxStore
+      source_path: src/BusinessIntegration/Application/InboxStore.php
+      target_path: src/InboxStore.php
+      kind: interface
+      public_methods:
+        - complete
+        - fail
+        - receive
+        - recent
+        - renew
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\ProcessManagerStore
+      new_fqcn: Kumwe\Integration\ProcessManagerStore
+      source_path: src/BusinessIntegration/Application/ProcessManagerStore.php
+      target_path: src/ProcessManagerStore.php
+      kind: interface
+      public_methods:
+        - claimWork
+        - completeWork
+        - create
+        - failWork
+        - findByCorrelation
+        - load
+        - recent
+        - renewWork
+        - save
+        - work
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\ProcessManagerHandler
+      new_fqcn: Kumwe\Integration\ProcessManagerHandler
+      source_path: src/BusinessIntegration/Application/ProcessManagerHandler.php
+      target_path: src/ProcessManagerHandler.php
+      kind: interface
+      public_methods:
+        - apply
+        - correlationId
+        - processType
+        - start
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\EventContractRegistry
+      new_fqcn: Kumwe\Integration\EventContractRegistry
+      source_path: src/BusinessIntegration/Application/EventContractRegistry.php
+      target_path: src/EventContractRegistry.php
+      kind: class
+      public_methods:
+        - __construct
+        - assertEvent
+        - consumer
+        - consumersFor
+        - replace
+        - schema
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\PayloadSchemaValidator
+      new_fqcn: Kumwe\Integration\PayloadSchemaValidator
+      source_path: src/BusinessIntegration/Application/PayloadSchemaValidator.php
+      target_path: src/PayloadSchemaValidator.php
+      kind: class
+      public_methods:
+        - assertPayload
+        - assertSchema
+      public_properties: []
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\InboxDisposition
+      new_fqcn: Kumwe\Integration\InboxDisposition
+      source_path: src/BusinessIntegration/Application/InboxDisposition.php
+      target_path: src/InboxDisposition.php
+      kind: enum
+      public_methods:
+        - cases
+        - from
+        - tryFrom
+      public_properties:
+        - name
+        - value
+      public_constants:
+        - BUSY
+        - CLAIMED
+        - DUPLICATE
+        - POISON
+        - REORDERED
+        - UNAVAILABLE
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\InboxClaimResult
+      new_fqcn: Kumwe\Integration\InboxClaimResult
+      source_path: src/BusinessIntegration/Application/InboxClaimResult.php
+      target_path: src/InboxClaimResult.php
+      kind: class
+      public_methods:
+        - __construct
+      public_properties:
+        - disposition
+        - lease
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\InboxLease
+      new_fqcn: Kumwe\Integration\InboxLease
+      source_path: src/BusinessIntegration/Application/InboxLease.php
+      target_path: src/InboxLease.php
+      kind: class
+      public_methods:
+        - __construct
+      public_properties:
+        - attempts
+        - consumer
+        - event
+        - leaseToken
+        - runtimeGeneration
+        - workerId
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\OutboxLease
+      new_fqcn: Kumwe\Integration\OutboxLease
+      source_path: src/BusinessIntegration/Application/OutboxLease.php
+      target_path: src/OutboxLease.php
+      kind: class
+      public_methods:
+        - __construct
+      public_properties:
+        - attempts
+        - event
+        - leaseToken
+        - maximumAttempts
+        - runtimeGeneration
+        - workerId
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+    - old_fqcn: Kumwe\App\BusinessIntegration\Application\ProcessWorkLease
+      new_fqcn: Kumwe\Integration\ProcessWorkLease
+      source_path: src/BusinessIntegration/Application/ProcessWorkLease.php
+      target_path: src/ProcessWorkLease.php
+      kind: class
+      public_methods:
+        - __construct
+      public_properties:
+        - attempts
+        - correlationId
+        - leaseToken
+        - organizationId
+        - processId
+        - processVersion
+        - runtimeGeneration
+        - siteIdentifier
+        - work
+        - workerId
+      public_constants: []
+      exceptions: []
+      serialization_contract: Explicit scalar projections documented in docs/public-api.md; PHP native serialization
+        is not a durable wire or authority contract.
+      compatibility: Portable behavior is retained under the canonical namespace. Package-owned boundary and
+        regression tests document deliberate validation and scheduling corrections.
+  consumers:
+    app_code:
+      - src/BusinessIntegration/Application/BusinessRecordMutationEventPublisher.php
+      - src/BusinessIntegration/Application/EventContractRegistry.php
+      - src/BusinessIntegration/Application/IntegrationOperationsService.php
+      - src/BusinessIntegration/Application/JobQueueIntegrationEventHandler.php
+      - src/BusinessIntegration/Application/JobQueueProcessWorkHandler.php
+      - src/BusinessIntegration/Application/ProcessManagerHandler.php
+      - src/BusinessIntegration/Application/ProcessManagerService.php
+      - src/BusinessIntegration/Application/ProcessManagerStore.php
+      - src/BusinessIntegration/Application/ProcessWorkHandler.php
+      - src/BusinessIntegration/Application/ProcessWorkLease.php
+      - src/BusinessIntegration/Infrastructure/ContributedScheduleSynchronizer.php
+      - src/BusinessIntegration/Infrastructure/DoctrineInboxStore.php
+      - src/BusinessIntegration/Infrastructure/DoctrineOutboxStore.php
+      - src/BusinessIntegration/Infrastructure/DoctrineProcessManagerStore.php
+      - src/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransport.php
+      - src/BusinessReporting/Infrastructure/DoctrineProjectionStore.php
+      - src/Extension/Contribution/CanonicalManifestInterpreter.php
+      - src/Extension/Contribution/CoreContributionRegistrar.php
+      - src/Extension/Contribution/CoreExtensionContributions.php
+      - src/Extension/Contribution/ExtensionContributionRegistrySet.php
+      - src/Kernel/ContainerFactory.php
+    configuration_and_di: []
+    reflection_and_string_references:
+      - Recompute same-namespace, reflected and dynamically constructed names before App adoption; exact
+        source inventory is evidence, not a complete dynamic reference proof.
+    fixtures_and_examples:
+      - examples/consumer.php
+    external:
+      - src/Manifest/ManifestContributionGraphValidator.php
+      - src/Manifest/ManifestContributions.php
+      - src/Spi/BusinessIntegration/Application/DomainEventHandler.php
+      - src/Spi/BusinessIntegration/Application/IntegrationEventHandler.php
+      - src/Spi/BusinessIntegration/Application/IntegrationEventTransport.php
+      - src/Spi/BusinessReporting/Domain/ProjectionDefinition.php
+  dependency_injection:
+    mode: config-provider
+    provider: Kumwe\Integration\ConfigProvider
+    factories:
+      - Kumwe\Integration\Container\EventContractRegistryFactory
+    aliases: []
+    service_lifetimes:
+      - "Kumwe\\Integration\\EventContractRegistry: shared"
+    configuration_keys:
+      - kumwe.integration.schemas
+      - kumwe.integration.consumers
+    provider_absence_reason: null
+ownership:
+  responsibility: Portable event contracts, validation, delivery values and contribution definitions.
+  non_responsibilities:
+    - Host trust and final authorization
+    - Persistence, durable transactions, worker and transport lifecycle
+    - App runtime adoption and native release publication
+  allowed_dependency_ceiling:
+    - php
+    - kumwe/canonical-json
+    - kumwe/contribution
+    - kumwe/access-context
+    - kumwe/automation
+    - ramsey/uuid
+    - ext-mbstring
+    - psr/container
+  implementation_owner: kumwe/integration
+  next_consumer: kumwe/app
+  public_manifests:
+    - path: resources/public-api/v1.json
+      sha256: c95efa67274c4c989703db6f0f862953704ac4cdede6c515cc9cc06f20852a5c
+    - path: resources/capabilities/v1.json
+      sha256: 38ea841cb3243ff70c33c4c686ad9c8c1eda6beb0bb63aba240d620cee665834
+    - path: resources/service-map/v1.json
+      sha256: 99951ae2eadb277d96b9aa0f282634840a8e3b90a60372885a15dcb7aa5a91d2
+  intentionally_excluded:
+    - Event contracts, schema validation and portable integration declarations are implemented and tested
+      here. Transport, outbox persistence, commit ordering, network deadlines and final authorization remain
+      host responsibilities.
+native_cpp: null
+php_extension: null
+tests:
+  moved_or_added:
+    - tools/verify-clean-consumer.php
+    - tests/bootstrap.php
+    - tests/container.php
+    - tests/run.php
+  remain_in_app_or_consumer:
+    - tests/Functional/Extension/LiveSurfaceContractParityTest.php
+    - tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php
+    - tests/Integration/BusinessIntegration/HungEndpointDeadlineIntegrationTest.php
+    - tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php
+    - tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php
+    - tests/Integration/BusinessIntegration/ProjectionRuntimePersistenceTest.php
+    - tests/Integration/Extension/GeneratedExtensionLifecycleIntegrationTest.php
+    - tests/Integration/Persistence/TransactionBoundaryEngineIntegrationTest.php
+    - tests/Support/AssetInspectionDeploymentAcceptance.php
+    - tests/Unit/BusinessIntegration/Application/BusinessRecordMutationEventPublisherTest.php
+    - tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php
+    - tests/Unit/BusinessIntegration/Application/JobQueueIntegrationEventHandlerTest.php
+    - tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php
+    - tests/Unit/BusinessIntegration/Domain/IntegrationContributionDefinitionTest.php
+    - tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php
+    - tests/Unit/BusinessIntegration/EventContractTest.php
+    - tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php
+    - tests/Unit/BusinessIntegration/IntegrationOperationsServiceTest.php
+    - tests/Unit/BusinessIntegration/OutboxDispatcherTest.php
+    - tests/Unit/BusinessIntegration/ProcessCancellationWorkTest.php
+    - tests/Unit/BusinessIntegration/ProcessInstanceTest.php
+    - tests/Unit/BusinessIntegration/ProcessWorkDispatcherTest.php
+    - tests/Unit/BusinessRecord/Application/BusinessRecordMutationPublicationTest.php
+    - tests/Unit/Extension/Contribution/ExtensionBindingSurfaceTest.php
+    - tests/Unit/Extension/Contribution/OwnedBindingCanonicalDriftTest.php
+  split_tests:
+    - Remove only library implementation assertions after verified App adoption; retain host wiring and
+      composed behavior assertions.
+  prohibited_duplicates:
+    - App must not retain unit tests of vendor-owned implementation internals after adoption.
+  corpora: []
+documentation:
+  charter: CHARTER.md
+  readme: README.md
+  public_api: docs/public-api.md
+  architecture: docs/architecture.md
+  integration_or_consumer: docs/integration.md
+  examples:
+    - examples/consumer.php
+  changelog_record: CHANGELOG.md / 0.2.3
+release_expectations:
+  version_policy: Exact stable sibling package pins; preserve coherent released graphs until compatible
+    successor releases exist.
+  expected_artifact_types:
+    - Composer package archive
+    - GitHub source archive
+  required_checks:
+    - composer check
+    - Final hosted package CI
+    - Release contract record and consumer schema validation
+    - Full authoritative canonical manifests and migration-handoff schema validation with refusal regressions
+  required_registry_or_installer: Composer
+  required_external_attestation: true
+governance:
+  completion_claim: false
+decisions:
+  - Canonical JSON owns generic encoding; Automation owns retry and scheduling semantics.
+  - The host supplies admitted declarations and synchronizes catalog replacement when its runtime shares
+    concurrent state.
+  - Core retains transactional outbox, inbox contention, replay, webhook egress security and worker lifecycle.
+blockers: []
+consumer_contract:
+  permitted_only_when:
+    - The selected immutable package and dependency releases have independent source, artifact and
+      clean-consumer verification.
+    - Core integration tests pass against the exact selected package version.
+  consumer_repository: https://github.com/kumwe/app
+  dependency_or_native_change: Pin the independently verified package version exactly; resolve dependencies and
+    run affected Core integration tests.
+  namespace_or_api_replacements:
+    - Kumwe\App\BusinessIntegration\Domain\EventSchemaDefinition -> Kumwe\Integration\EventSchemaDefinition
+    - Kumwe\App\BusinessIntegration\Domain\ProcessInstance -> Kumwe\Integration\ProcessInstance
+    - Kumwe\App\BusinessIntegration\Domain\ProcessStatus -> Kumwe\Integration\ProcessStatus
+    - Kumwe\App\BusinessIntegration\Domain\ProcessTransition -> Kumwe\Integration\ProcessTransition
+    - Kumwe\App\BusinessIntegration\Domain\ProcessWorkItem -> Kumwe\Integration\ProcessWorkItem
+    - Kumwe\App\BusinessIntegration\Domain\ProcessWorkKind -> Kumwe\Integration\ProcessWorkKind
+    - Kumwe\App\BusinessIntegration\Domain\RecordedDomainEvent -> Kumwe\Integration\RecordedDomainEvent
+    - Kumwe\App\BusinessIntegration\Domain\RecordedEventEnvelope -> Kumwe\Integration\RecordedEventEnvelope
+    - Kumwe\App\BusinessIntegration\Domain\RecordedIntegrationEvent ->
+      Kumwe\Integration\RecordedIntegrationEvent
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\ConsumerIdempotency ->
+      Kumwe\Integration\ConsumerIdempotency
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\DomainEvent -> Kumwe\Integration\DomainEvent
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\DomainListenerDeclaration ->
+      Kumwe\Integration\DomainListenerDeclaration
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\DomainListenerDefinition ->
+      Kumwe\Integration\DomainListenerDefinition
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\EventConsumerDeclaration ->
+      Kumwe\Integration\EventConsumerDeclaration
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\EventConsumerDefinition ->
+      Kumwe\Integration\EventConsumerDefinition
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\EventEnvelope -> Kumwe\Integration\EventEnvelope
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\EventSensitivity -> Kumwe\Integration\EventSensitivity
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\IntegrationContract ->
+      Kumwe\Integration\IntegrationContract
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\IntegrationContractValidator ->
+      Kumwe\Integration\IntegrationContractValidator
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\IntegrationEvent -> Kumwe\Integration\IntegrationEvent
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\WebhookContributionDefinition ->
+      Kumwe\Integration\WebhookContributionDefinition
+    - Kumwe\Extension\Spi\BusinessIntegration\Domain\WebhookDeclaration -> Kumwe\Integration\WebhookDeclaration
+    - Kumwe\App\BusinessIntegration\Application\OutboxStore -> Kumwe\Integration\OutboxStore
+    - Kumwe\App\BusinessIntegration\Application\InboxStore -> Kumwe\Integration\InboxStore
+    - Kumwe\App\BusinessIntegration\Application\ProcessManagerStore -> Kumwe\Integration\ProcessManagerStore
+    - Kumwe\App\BusinessIntegration\Application\ProcessManagerHandler ->
+      Kumwe\Integration\ProcessManagerHandler
+    - Kumwe\App\BusinessIntegration\Application\EventContractRegistry ->
+      Kumwe\Integration\EventContractRegistry
+    - Kumwe\App\BusinessIntegration\Application\PayloadSchemaValidator ->
+      Kumwe\Integration\PayloadSchemaValidator
+    - Kumwe\App\BusinessIntegration\Application\InboxDisposition -> Kumwe\Integration\InboxDisposition
+    - Kumwe\App\BusinessIntegration\Application\InboxClaimResult -> Kumwe\Integration\InboxClaimResult
+    - Kumwe\App\BusinessIntegration\Application\InboxLease -> Kumwe\Integration\InboxLease
+    - Kumwe\App\BusinessIntegration\Application\OutboxLease -> Kumwe\Integration\OutboxLease
+    - Kumwe\App\BusinessIntegration\Application\ProcessWorkLease -> Kumwe\Integration\ProcessWorkLease
+  files_to_update:
+    - composer.json
+    - composer.lock
+    - src/BusinessIntegration/Application/BusinessRecordMutationEventPublisher.php
+    - src/BusinessIntegration/Application/EventContractRegistry.php
+    - src/BusinessIntegration/Application/IntegrationOperationsService.php
+    - src/BusinessIntegration/Application/JobQueueIntegrationEventHandler.php
+    - src/BusinessIntegration/Application/JobQueueProcessWorkHandler.php
+    - src/BusinessIntegration/Application/ProcessManagerHandler.php
+    - src/BusinessIntegration/Application/ProcessManagerService.php
+    - src/BusinessIntegration/Application/ProcessManagerStore.php
+    - src/BusinessIntegration/Application/ProcessWorkHandler.php
+    - src/BusinessIntegration/Application/ProcessWorkLease.php
+    - src/BusinessIntegration/Infrastructure/ContributedScheduleSynchronizer.php
+    - src/BusinessIntegration/Infrastructure/DoctrineInboxStore.php
+    - src/BusinessIntegration/Infrastructure/DoctrineOutboxStore.php
+    - src/BusinessIntegration/Infrastructure/DoctrineProcessManagerStore.php
+    - src/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransport.php
+    - src/BusinessReporting/Infrastructure/DoctrineProjectionStore.php
+    - src/Extension/Contribution/CanonicalManifestInterpreter.php
+    - src/Extension/Contribution/CoreContributionRegistrar.php
+    - src/Extension/Contribution/CoreExtensionContributions.php
+    - src/Extension/Contribution/ExtensionContributionRegistrySet.php
+    - src/Kernel/ContainerFactory.php
+  files_to_remove:
+    - src/BusinessIntegration/Application/EventContractRegistry.php
+    - src/BusinessIntegration/Application/InboxClaimResult.php
+    - src/BusinessIntegration/Application/InboxDisposition.php
+    - src/BusinessIntegration/Application/InboxLease.php
+    - src/BusinessIntegration/Application/InboxStore.php
+    - src/BusinessIntegration/Application/OutboxLease.php
+    - src/BusinessIntegration/Application/OutboxStore.php
+    - src/BusinessIntegration/Application/PayloadSchemaValidator.php
+    - src/BusinessIntegration/Application/ProcessManagerHandler.php
+    - src/BusinessIntegration/Application/ProcessManagerStore.php
+    - src/BusinessIntegration/Application/ProcessWorkLease.php
+    - src/BusinessIntegration/Domain/EventSchemaDefinition.php
+    - src/BusinessIntegration/Domain/ProcessInstance.php
+    - src/BusinessIntegration/Domain/ProcessStatus.php
+    - src/BusinessIntegration/Domain/ProcessTransition.php
+    - src/BusinessIntegration/Domain/ProcessWorkItem.php
+    - src/BusinessIntegration/Domain/ProcessWorkKind.php
+    - src/BusinessIntegration/Domain/RecordedDomainEvent.php
+    - src/BusinessIntegration/Domain/RecordedEventEnvelope.php
+    - src/BusinessIntegration/Domain/RecordedIntegrationEvent.php
+  tests_to_remove:
+    - Implementation-owned portions only, after the package behavior suite and App integration suite pass.
+  tests_to_retain_or_add:
+    - tests/Functional/Extension/LiveSurfaceContractParityTest.php
+    - tests/Integration/BusinessIntegration/BusinessIntegrationPersistenceTest.php
+    - tests/Integration/BusinessIntegration/HungEndpointDeadlineIntegrationTest.php
+    - tests/Integration/BusinessIntegration/OutboxInboxClaimContentionIntegrationTest.php
+    - tests/Integration/BusinessIntegration/PoisonAndDeadLetterIntegrationTest.php
+    - tests/Integration/BusinessIntegration/ProjectionRuntimePersistenceTest.php
+    - tests/Integration/Extension/GeneratedExtensionLifecycleIntegrationTest.php
+    - tests/Integration/Persistence/TransactionBoundaryEngineIntegrationTest.php
+    - tests/Support/AssetInspectionDeploymentAcceptance.php
+    - tests/Unit/BusinessIntegration/Application/BusinessRecordMutationEventPublisherTest.php
+    - tests/Unit/BusinessIntegration/Application/DurableOutboundAdapterDeliveryTest.php
+    - tests/Unit/BusinessIntegration/Application/JobQueueIntegrationEventHandlerTest.php
+    - tests/Unit/BusinessIntegration/ConsumerDispatcherTest.php
+    - tests/Unit/BusinessIntegration/Domain/IntegrationContributionDefinitionTest.php
+    - tests/Unit/BusinessIntegration/DurableOutboundAdapterDispatcherTest.php
+    - tests/Unit/BusinessIntegration/EventContractTest.php
+    - tests/Unit/BusinessIntegration/Infrastructure/RuntimeIntegrationEventTransportTest.php
+    - tests/Unit/BusinessIntegration/IntegrationOperationsServiceTest.php
+    - tests/Unit/BusinessIntegration/OutboxDispatcherTest.php
+    - tests/Unit/BusinessIntegration/ProcessCancellationWorkTest.php
+    - tests/Unit/BusinessIntegration/ProcessInstanceTest.php
+    - tests/Unit/BusinessIntegration/ProcessWorkDispatcherTest.php
+    - tests/Unit/BusinessRecord/Application/BusinessRecordMutationPublicationTest.php
+    - tests/Unit/Extension/Contribution/ExtensionBindingSurfaceTest.php
+    - tests/Unit/Extension/Contribution/OwnedBindingCanonicalDriftTest.php
+  di_or_provisioning_changes:
+    - Register Kumwe\Integration\ConfigProvider and provide all explicit host ports documented in
+      docs/integration.md.
+  capability_index_changes:
+    - Record ownership from the verified package capability and public API manifests.
+  changelog_and_evidence_changes:
+    - Record exact source, package archive and dependency identities in the external release attestation and
+      App integration ledger.
+  verification_commands:
+    - composer check
+    - Affected App integration suites
+    - Complete App package governance gate
+---
+
+## Package contract
+
+Integration owns versioned event and consumer declarations, bounded payload validation, deterministic
+catalog composition, process transitions and neutral persistence ports. It supplies no transport,
+database adapter, transactional event bus or authorization engine.
+
+## Public API and responsibility
+
+[The public API](public-api.md) documents every canonical `Kumwe\Integration` type. Public API,
+capability and service-map manifests record shapes, ownership and explicit composition. Core retains
+transaction, transport, dispatch, webhook security, activation and retention responsibilities.
+
+## Dependencies and semantic inputs
+
+[Composer metadata](../composer.json) declares the exact runtime tuple. Canonical JSON owns generic
+encoding and Automation owns scheduling and retry contracts. The host supplies the encoder and
+admitted event/consumer declarations; the package performs no discovery or trust decision.
+
+## Consumer contract
+
+Pin an independently verified immutable release and keep the host's operational authority explicit.
+The symbol mappings and source inventory above preserve compatibility provenance. Inspect current
+consumer source before removing duplicates. [Host composition](integration.md) defines provider,
+factory, configuration and lifetime requirements.
+
+## Test ownership
+
+Portable behavior, boundary and provider tests belong to this package. The inventories in
+`resources/migration/` retain exact source, test and consumer traceability. Core owns database,
+transaction-plus-outbox, contention, replay, generation, egress and worker lifecycle acceptance tests.
+
+## Consumer verification
+
+`composer clean-consumer` installs the actual ZIP with no development packages and an authoritative
+classmap. The consumer supplies ServiceManager as its own composition dependency and runs the package's
+behavior/provider suite and installed example through that autoloader. Independent release evidence
+binds source/tag/archive, manifests and dependency identities; this record does not attest to itself.
+
+## Compatibility and drift
+
+Catalog replacement is synchronous and atomic within one PHP operation; the host supplies concurrency
+synchronization. Portable contract changes require review and a versioned release. Consumers run affected
+integration tests when changing exact pins. Existing tags and artifacts are never replaced.
+
+## Validation
+
+```bash
+npm ci --prefix tools/governance --ignore-scripts
+composer install
+composer check
+composer clean-consumer
+```
+
+The schema gate validates all four complete records and rejects malformed YAML, incomplete source
+identity and invalid consumer mappings. CI results and release attestations are external evidence.
+[Release policy](releasing.md) distinguishes publication from consumer qualification.

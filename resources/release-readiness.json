@@ -1,6 +1,6 @@
 {
   "status": "blocked",
-  "reason": "Exact dependency coordinates are recorded; independent artifact verification and the coordinated consumer release train remain required before adoption.",
+  "reason": "Exact dependency coordinates are recorded; independent artifact verification remains required before host adoption.",
   "dependencies": {
     "kumwe/canonical-json": {
       "version": "0.1.1",
