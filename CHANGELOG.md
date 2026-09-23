@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.4
+
+- Correct the release-record change set from KUMWE-CS-2026-035 to KUMWE-CS-2026-027 so it shares the sequence number of migration_id KUMWE-MIG-2026-027: the App ledger refuses an inconsistent migration/change-set pair rather than renumbering, and KUMWE-CS-2026-035 already belongs to kumwe/navigation.
+- Retain runtime source, public API, manifest symbol content and the exact published dependency tuple unchanged; only the release identity and the change set move.
+
 ## 0.2.3
 
 - Select actual published Automation 0.2.2 while keeping the compatible Contribution and Access Context pins.

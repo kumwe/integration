@@ -1,7 +1,7 @@
 {
     "schema": "kumwe-package-capabilities/v1",
     "package": "kumwe/integration",
-    "release": "0.2.3",
+    "release": "0.2.4",
     "namespace": "Kumwe\\Integration\\",
     "responsibility": "Portable event catalogs, bounded payload validation, process state and neutral integration ports.",
     "non_responsibilities": [

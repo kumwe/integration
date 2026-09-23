@@ -11,7 +11,7 @@ replacement, immutable process state and work, and neutral inbox, outbox and pro
 ## Installation
 
 ```bash
-composer require kumwe/integration:0.2.3
+composer require kumwe/integration:0.2.4
 ```
 
 Requires PHP `^8.5`, `ext-mbstring` and the dependencies in [composer.json](composer.json).
