@@ -2,7 +2,7 @@
 schema: kumwe-package-release-record/v1
 artifact_kind: framework_php
 migration_id: KUMWE-MIG-2026-027
-change_set: KUMWE-CS-2026-035
+change_set: KUMWE-CS-2026-027
 target:
   repository: https://github.com/kumwe/integration
   artifact_identity: kumwe/integration
@@ -736,11 +736,11 @@ ownership:
   next_consumer: kumwe/app
   public_manifests:
     - path: resources/public-api/v1.json
-      sha256: c95efa67274c4c989703db6f0f862953704ac4cdede6c515cc9cc06f20852a5c
+      sha256: 9a3c173bfe6706739c0307abb075b5acf8ff181b63fedf5bf8e4fc5191cb3ad2
     - path: resources/capabilities/v1.json
-      sha256: 38ea841cb3243ff70c33c4c686ad9c8c1eda6beb0bb63aba240d620cee665834
+      sha256: 8d36acad4402dc46623cd7a39d038e1f36c667409628ce6195ddd3735f36481b
     - path: resources/service-map/v1.json
-      sha256: 99951ae2eadb277d96b9aa0f282634840a8e3b90a60372885a15dcb7aa5a91d2
+      sha256: 2c28cbf4329709e68f6284fe1d6fb0943b2ce97fd197f700751af9e134cf51e7
   intentionally_excluded:
     - Event contracts, schema validation and portable integration declarations are implemented and tested here. Transport, outbox persistence, commit ordering, network deadlines and final authorization remain host responsibilities.
 native_cpp: null
@@ -790,7 +790,7 @@ documentation:
   integration_or_consumer: docs/integration.md
   examples:
     - examples/consumer.php
-  changelog_record: CHANGELOG.md / 0.2.3
+  changelog_record: CHANGELOG.md / 0.2.4
 release_expectations:
   version_policy: Exact stable sibling package pins; preserve coherent released graphs until compatible successor releases exist.
   expected_artifact_types:
